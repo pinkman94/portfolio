@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이용상 | Con-Tech Engineer Portfolio</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Pretendard Font (Korean Standard Modern Font) -->
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css" />
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Pretendard', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            blue: '#2563EB', // Smart Blue
+                            navy: '#0f172a', // Slate-900 (Deep Navy)
+                            slate: '#1e293b', // Slate-800
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Pretendard', sans-serif; }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f5f9; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+        
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        /* Fade-in Animation for Modal */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .modal-animate {
+            animation: fadeIn 0.2s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-brand-blue selection:text-white relative">
+
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300 bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-sm">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#about" class="font-bold text-2xl tracking-tight text-brand-navy">
+                        <span class="text-brand-blue">Con-Tech</span> Eng.
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-10">
+                    <a href="#about" class="text-slate-600 hover:text-brand-blue font-semibold transition-colors">소개</a>
+                    <a href="#education" class="text-slate-600 hover:text-brand-blue font-semibold transition-colors">학력 & 자격</a>
+                    <a href="#competence" class="text-slate-600 hover:text-brand-blue font-semibold transition-colors">핵심 역량</a>
+                    <a href="#career" class="text-slate-600 hover:text-brand-blue font-semibold transition-colors">경력 사항</a>
+                    <a href="#projects" class="text-slate-600 hover:text-brand-blue font-semibold transition-colors">프로젝트</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button class="text-slate-600 hover:text-brand-navy focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 각 섹션에 min-h-screen 및 py-32 적용하여 섹션 간격 확보 및 스크롤 위치 보정(scroll-mt-20) -->
+    <section id="about" class="relative min-h-screen flex items-center pt-32 pb-20 scroll-mt-20 bg-brand-navy overflow-hidden">
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <div class="absolute -top-[20%] -right-[10%] w-[70%] h-[70%] rounded-full bg-gradient-to-br from-brand-blue/20 to-transparent blur-3xl"></div>
+            <div class="absolute bottom-[10%] -left-[10%] w-[50%] h-[50%] rounded-full bg-gradient-to-tr from-indigo-500/10 to-transparent blur-3xl"></div>
+            <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiLz48L3N2Zz4=')] [mask-image:linear-gradient(to_bottom,white,transparent)]"></div>
+        </div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-20">
+            
+            <!-- Profile Card -->
+            <div class="w-full max-w-sm flex flex-col items-center flex-shrink-0 z-10">
+                <div class="w-40 md:w-48 aspect-[3/4] rounded-2xl border-4 border-white/10 shadow-2xl overflow-hidden mb-6 relative group bg-slate-800 flex-shrink-0 transition-transform hover:-translate-y-2 duration-300">
+                    <img src="https://i.imgur.com/424bk5k.jpeg" alt="이용상 프로필 사진" class="w-full h-full object-cover object-center relative z-0">
+                </div>
+                
+                <div class="text-center mb-6">
+                    <h2 class="text-4xl font-extrabold text-white mb-2 tracking-tight">이용상</h2>
+                    <p class="text-slate-300 text-lg font-medium tracking-wide mb-1">LEE YONG SANG</p>
+                    <p class="text-slate-500 text-sm tracking-widest">(李 鎔 象)</p>
+                </div>
+                
+                <div class="w-full bg-slate-800/80 backdrop-blur-md rounded-2xl p-6 border border-slate-700 shadow-xl text-left">
+                    <ul class="space-y-4 text-[15px]">
+                        <li class="flex items-center justify-between border-b border-slate-700/50 pb-3">
+                            <span class="text-slate-400 flex items-center"><i class="fas fa-calendar-alt w-5 text-center mr-2 text-brand-blue"></i> 생년월일</span> 
+                            <span class="font-medium text-white tracking-wide">1994. 08. 14</span>
+                        </li>
+                        <li class="flex items-center justify-between border-b border-slate-700/50 pb-3">
+                            <span class="text-slate-400 flex items-center"><i class="fas fa-hard-hat w-5 text-center mr-2 text-brand-blue"></i> 직무</span> 
+                            <span class="font-medium text-white">건축 시공</span>
+                        </li>
+                        <li class="flex items-center justify-between">
+                            <span class="text-slate-400 flex items-center"><i class="fas fa-briefcase w-5 text-center mr-2 text-brand-blue"></i> 총 경력</span> 
+                            <span class="font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">7년 1개월</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Text Content -->
+            <div class="w-full lg:w-3/5 flex flex-col items-center lg:items-start text-center lg:text-left z-10">
+                <span class="inline-block py-1.5 px-4 rounded-full bg-brand-blue/10 text-brand-blue border border-brand-blue/20 font-semibold text-sm mb-6 tracking-wider shadow-[0_0_15px_rgba(37,99,235,0.2)] uppercase">
+                    Architectural & Con-Tech Engineer
+                </span>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6 break-keep">
+                    현장을 장악하는 <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-brand-blue">실행력</span>,<br/>
+                    데이터로 혁신하는 <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-blue to-cyan-400">콘테크 엔지니어</span>
+                </h1>
+                <p class="mt-4 text-lg md:text-xl text-slate-300 max-w-2xl leading-relaxed break-keep">
+                    시공, 공무, 대관 업무를 아우르는 7년 차 건축 엔지니어입니다.<br/><br/>고난도 도심지 현장에서 증명한 탄탄한 문제 해결 능력과 자체 개발한 스마트 현장 관리 플랫폼을 바탕으로, 건설 현장의 진정한 디지털 전환(DX)과 무결점 품질을 실현합니다.
+                </p>
+                <div class="mt-12 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                    <a href="#projects" class="px-8 py-4 bg-brand-blue text-white rounded-xl font-bold shadow-lg shadow-blue-500/30 hover:bg-blue-700 hover:-translate-y-1 transition-all duration-300 text-lg">
+                        프로젝트 보기 <i class="fas fa-arrow-down ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 독립된 섹션으로 구성 및 여백 대폭 확대 -->
+    <section id="education" class="relative min-h-screen flex items-center py-32 scroll-mt-20 bg-slate-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="text-center mb-20">
+                <span class="text-brand-blue font-bold tracking-wider uppercase text-sm">Background</span>
+                <h2 class="text-4xl font-bold text-brand-navy mt-2">학력 및 자격 사항</h2>
+                <div class="w-20 h-1.5 bg-brand-blue mx-auto mt-6 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <!-- Education Timeline -->
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800 mb-10 flex items-center">
+                        <i class="fas fa-graduation-cap text-brand-blue mr-3 text-3xl"></i> 학력 사항
+                    </h3>
+                    
+                    <div class="relative border-l-2 border-slate-200 ml-4 space-y-12">
+                        <!-- 대학원 -->
+                        <div class="relative pl-8">
+                            <div class="absolute w-5 h-5 bg-brand-blue rounded-full -left-[11px] top-1 shadow-[0_0_0_4px_rgba(37,99,235,0.2)]"></div>
+                            <div class="bg-white p-7 rounded-2xl shadow-md border border-slate-100 hover:shadow-lg transition-shadow">
+                                <span class="text-sm font-bold text-brand-blue tracking-wider">2024.09 ~ 2027.02 (졸업 예정)</span>
+                                <h4 class="text-xl font-extrabold text-brand-navy mt-2">한양대학교 공학대학원</h4>
+                                <p class="text-slate-600 mt-1 font-medium text-lg">건축공학과 석사과정</p>
+                                
+                                <div class="mt-6 pt-5 border-t border-slate-100 flex items-center gap-4">
+                                    <button onclick="openModal('https://i.imgur.com/FCvIVDn.jpeg')" class="inline-flex items-center px-4 py-2 bg-slate-800 text-white text-sm font-bold rounded-lg hover:bg-brand-blue transition-colors shadow-sm">
+                                        <i class="fas fa-search-plus mr-2"></i> 재학증명서 보기
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 전문대학교 -->
+                        <div class="relative pl-8">
+                            <div class="absolute w-4 h-4 bg-slate-300 rounded-full -left-[9px] top-1 border-2 border-white"></div>
+                            <div class="bg-transparent group">
+                                <span class="text-sm font-bold text-slate-500 tracking-wider">2013.03 ~ 2019.02</span>
+                                <h4 class="text-lg font-bold text-slate-700 mt-1">신안산대학교</h4>
+                                <p class="text-slate-600 mt-1">실내디자인과 졸업</p>
+                            </div>
+                        </div>
+
+                        <!-- 고등학교 -->
+                        <div class="relative pl-8">
+                            <div class="absolute w-4 h-4 bg-slate-300 rounded-full -left-[9px] top-1 border-2 border-white"></div>
+                            <div class="bg-transparent group">
+                                <span class="text-sm font-bold text-slate-500 tracking-wider">2010.03 ~ 2013.02</span>
+                                <h4 class="text-lg font-bold text-slate-700 mt-1">송호고등학교</h4>
+                                <p class="text-slate-600 mt-1">졸업</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certifications -->
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800 mb-10 flex items-center">
+                        <i class="fas fa-award text-brand-blue mr-3 text-3xl"></i> 자격 사항
+                    </h3>
+                    
+                    <div class="bg-white rounded-2xl shadow-md border border-slate-200 overflow-hidden">
+                        <table class="min-w-full divide-y divide-slate-200 text-left">
+                            <thead class="bg-slate-50">
+                                <tr>
+                                    <th scope="col" class="px-5 py-4 text-sm font-bold text-slate-700 uppercase tracking-wider">자격증명</th>
+                                    <th scope="col" class="px-5 py-4 text-sm font-bold text-slate-700 uppercase tracking-wider hidden sm:table-cell">발행기관/일자</th>
+                                    <th scope="col" class="px-5 py-4 text-sm font-bold text-slate-700 uppercase tracking-wider text-center">증빙자료</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-100">
+                                <!-- 건축산업기사 -->
+                                <tr class="hover:bg-slate-50 transition-colors">
+                                    <td class="px-5 py-5 whitespace-nowrap">
+                                        <div class="flex items-center">
+                                            <div class="flex-shrink-0 h-10 w-10 rounded-full bg-blue-50 flex items-center justify-center text-brand-blue">
+                                                <i class="fas fa-certificate text-lg"></i>
+                                            </div>
+                                            <div class="ml-4 font-bold text-slate-800 text-lg">건축산업기사</div>
+                                        </div>
+                                        <!-- Mobile only info -->
+                                        <div class="sm:hidden ml-14 mt-1 text-xs text-slate-500">한국산업인력공단 (2019.05.22)</div>
+                                    </td>
+                                    <td class="px-5 py-5 whitespace-nowrap hidden sm:table-cell">
+                                        <div class="text-sm font-medium text-slate-700">한국산업인력공단</div>
+                                        <div class="text-sm text-slate-500 mt-0.5">2019.05.22</div>
+                                    </td>
+                                    <td class="px-5 py-5 whitespace-nowrap text-center">
+                                        <button onclick="openModal('https://i.imgur.com/Ujr1Ck2.jpeg')" class="px-3 py-1.5 bg-white border border-slate-300 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-100 hover:text-brand-blue transition-colors shadow-sm">
+                                            보기 <i class="fas fa-external-link-alt ml-1 text-xs"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                
+                                <!-- 건설안전기사 -->
+                                <tr class="hover:bg-slate-50 transition-colors">
+                                    <td class="px-5 py-5 whitespace-nowrap">
+                                        <div class="flex items-center">
+                                            <div class="flex-shrink-0 h-10 w-10 rounded-full bg-blue-50 flex items-center justify-center text-brand-blue">
+                                                <i class="fas fa-hard-hat text-lg"></i>
+                                            </div>
+                                            <div class="ml-4 font-bold text-slate-800 text-lg">건설안전기사</div>
+                                        </div>
+                                        <div class="sm:hidden ml-14 mt-1 text-xs text-slate-500">한국산업인력공단 (2023.09.01)</div>
+                                    </td>
+                                    <td class="px-5 py-5 whitespace-nowrap hidden sm:table-cell">
+                                        <div class="text-sm font-medium text-slate-700">한국산업인력공단</div>
+                                        <div class="text-sm text-slate-500 mt-0.5">2023.09.01</div>
+                                    </td>
+                                    <td class="px-5 py-5 whitespace-nowrap text-center">
+                                        <button onclick="openModal('https://i.imgur.com/Ujr1Ck2.jpeg')" class="px-3 py-1.5 bg-white border border-slate-300 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-100 hover:text-brand-blue transition-colors shadow-sm">
+                                            보기 <i class="fas fa-external-link-alt ml-1 text-xs"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <!-- 한국사능력검정시험 -->
+                                <tr class="hover:bg-slate-50 transition-colors">
+                                    <td class="px-5 py-5 whitespace-nowrap">
+                                        <div class="flex items-center">
+                                            <div class="flex-shrink-0 h-10 w-10 rounded-full bg-blue-50 flex items-center justify-center text-brand-blue">
+                                                <i class="fas fa-landmark text-lg"></i>
+                                            </div>
+                                            <div class="ml-4 font-bold text-slate-800 text-lg">한국사능력검정시험(2급)</div>
+                                        </div>
+                                        <div class="sm:hidden ml-14 mt-1 text-xs text-slate-500">국사편찬위원회 (2019.06.07)</div>
+                                    </td>
+                                    <td class="px-5 py-5 whitespace-nowrap hidden sm:table-cell">
+                                        <div class="text-sm font-medium text-slate-700">국사편찬위원회</div>
+                                        <div class="text-sm text-slate-500 mt-0.5">2019.06.07</div>
+                                    </td>
+                                    <td class="px-5 py-5 whitespace-nowrap text-center">
+                                        <button onclick="openModal('https://i.imgur.com/OyvUqAx.jpeg')" class="px-3 py-1.5 bg-white border border-slate-300 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-100 hover:text-brand-blue transition-colors shadow-sm">
+                                            보기 <i class="fas fa-external-link-alt ml-1 text-xs"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 화면에 꽉 차도록 여백 조정 -->
+    <section id="competence" class="relative min-h-screen flex items-center py-32 scroll-mt-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="text-center mb-20">
+                <span class="text-brand-blue font-bold tracking-wider uppercase text-sm">Con-Tech Synergy</span>
+                <h2 class="text-4xl font-bold text-brand-navy mt-2">핵심 역량</h2>
+                <div class="w-20 h-1.5 bg-brand-blue mx-auto mt-6 rounded-full"></div>
+                <p class="mt-6 text-lg text-slate-600 max-w-2xl mx-auto break-keep">
+                    전통적인 시공 기술의 깊이 위에 최신 IT 기술을 더하여, 현장의 고질적인 문제를 데이터와 시스템으로 해결합니다.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <!-- Competence 1 (Left) -->
+                <div class="bg-slate-50 rounded-3xl p-10 border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity transform group-hover:scale-110 duration-500">
+                        <i class="fas fa-flask text-9xl text-brand-blue"></i>
+                    </div>
+                    <div class="relative z-10">
+                        <div class="w-16 h-16 bg-white rounded-2xl shadow-sm border border-slate-100 flex items-center justify-center mb-8">
+                            <i class="fas fa-vial text-3xl text-brand-blue"></i>
+                        </div>
+                        <h3 class="text-2xl font-extrabold text-brand-navy mb-5 break-keep leading-snug">공학적 품질 혁신 :<br/>자가치유 스마트 콘크리트 연구</h3>
+                        <p class="text-slate-600 text-lg leading-relaxed break-keep mb-6">
+                            대학원에서 진행 중인 누수 방지 및 LCC(생애주기비용) 최적화 연구입니다. 미세 균열 발생 시 스스로 결함을 메워 하이엔드 주거 및 데이터센터의 절대적인 방수 품질을 확보하는 첨단 재료 기술을 연구하여 실무 현장의 하자율 Zero에 도전합니다.
+                        </p>
+                        <ul class="space-y-3">
+                            <li class="flex items-start text-base text-slate-700 font-medium">
+                                <i class="fas fa-check-circle text-brand-blue mt-1 mr-3"></i> 구조물 수명 연장 및 유지보수 비용 절감
+                            </li>
+                            <li class="flex items-start text-base text-slate-700 font-medium">
+                                <i class="fas fa-check-circle text-brand-blue mt-1 mr-3"></i> 하이엔드 건축물 방수 특화 설계 적용 가능
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Competence 2 (Right) -->
+                <div class="bg-brand-navy text-white rounded-3xl p-10 shadow-xl relative overflow-hidden group">
+                    <div class="absolute inset-0 bg-gradient-to-br from-brand-blue/30 to-transparent opacity-60"></div>
+                    <div class="relative z-10 flex flex-col h-full">
+                        <div class="w-16 h-16 bg-white/10 backdrop-blur-md rounded-2xl flex items-center justify-center mb-8 border border-white/20">
+                            <i class="fas fa-code text-3xl text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-extrabold text-white mb-5 break-keep leading-snug">스마트 건설 현장 관리<br/>플랫폼 자체 개발</h3>
+                        <p class="text-slate-300 text-lg leading-relaxed mb-6 break-keep">
+                            Google Firebase, GitHub, Vercel을 활용해 직접 개발 및 배포한 중소형 현장 맞춤형 플랫폼입니다. 수기 검측을 '스마트 체크리스트'로 모듈화하여 실시간 클라우드 동기화를 구현하고, 데이터 기반 마감 하자 리스크를 선제적으로 통제합니다.
+                        </p>
+                        
+                        <a href="https://precent.vercel.app/" target="_blank" class="inline-flex items-center justify-center px-6 py-3 bg-brand-blue/20 border border-brand-blue text-blue-300 font-bold rounded-xl hover:bg-brand-blue hover:text-white hover:shadow-[0_0_20px_rgba(37,99,235,0.4)] transition-all duration-300 w-max mb-8 group/btn">
+                            <i class="fas fa-laptop-code mr-2 group-hover/btn:animate-bounce"></i> 플랫폼 서비스 바로가기
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 직장 경력 (회사 단위) 추가 -->
+    <section id="career" class="relative min-h-[80vh] flex flex-col justify-center py-32 scroll-mt-20 bg-slate-100">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-10 border-b border-slate-300 pb-4 gap-4">
+                <div>
+                    <h2 class="text-3xl font-bold text-brand-navy flex items-center">
+                        <i class="fas fa-building text-brand-blue mr-3"></i> 경력사항
+                    </h2>
+                </div>
+                <div class="text-slate-600 font-medium text-sm sm:text-base">
+                    총 재직 기간: <span class="text-brand-blue font-bold">7년 1개월</span> (재직 회사 수 2개)
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-md border border-slate-200 p-8 md:p-12">
+                
+                <!-- 회사 1: 에이스디엔시 -->
+                <div class="flex flex-col lg:flex-row gap-8 mb-16 relative">
+                    <!-- Left: Company Info -->
+                    <div class="w-full lg:w-1/3 flex flex-col">
+                        <div class="flex items-center mb-2">
+                            <div class="w-3 h-3 rounded-full bg-brand-blue mr-3 shadow-[0_0_0_3px_rgba(37,99,235,0.2)]"></div>
+                            <span class="text-brand-blue font-bold text-sm tracking-wider">직장경력 1</span>
+                        </div>
+                        <h3 class="text-2xl font-extrabold text-slate-800 mb-2 ml-6">에이스디엔시(주)</h3>
+                        <p class="text-slate-500 font-medium ml-6 mb-1">2022.02.21 ~ 재직중</p>
+                        <span class="inline-block ml-6 px-3 py-1 bg-slate-100 text-slate-600 text-xs font-bold rounded-md w-max border border-slate-200 mt-2">정규직</span>
+                    </div>
+                    
+                    <!-- Right: Role Info -->
+                    <div class="w-full lg:w-2/3">
+                        <div class="flex flex-wrap gap-3 mb-6">
+                            <div class="flex items-center border border-slate-200 rounded-lg overflow-hidden bg-slate-50">
+                                <span class="px-4 py-2 bg-white font-bold text-slate-700 border-r border-slate-200 text-sm">부서</span>
+                                <span class="px-4 py-2 text-slate-600 text-sm font-medium">건축팀</span>
+                            </div>
+                            <div class="flex items-center border border-slate-200 rounded-lg overflow-hidden bg-slate-50">
+                                <span class="px-4 py-2 bg-white font-bold text-slate-700 border-r border-slate-200 text-sm">직급</span>
+                                <span class="px-4 py-2 text-slate-600 text-sm font-medium">선임(대리)</span>
+                            </div>
+                            <div class="flex items-center border border-slate-200 rounded-lg overflow-hidden bg-slate-50">
+                                <span class="px-4 py-2 bg-white font-bold text-slate-700 border-r border-slate-200 text-sm">담당업무</span>
+                                <span class="px-4 py-2 text-slate-600 text-sm font-medium">건축 시공(공사)</span>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-blue-50/50 p-5 rounded-xl border border-blue-100">
+                            <h4 class="font-bold text-slate-800 mb-3 flex items-center text-sm">
+                                <i class="fas fa-check text-brand-blue mr-2"></i> 주요 수행 현장 (건축 시공직)
+                            </h4>
+                            <ul class="list-none space-y-2 text-slate-600 text-[14.5px] ml-1">
+                                <li class="flex items-start"><span class="mr-2 font-bold">-</span> 병점복합타운 상업용지 신축공사</li>
+                                <li class="flex items-start"><span class="mr-2 font-bold">-</span> 영등포 C-TOWER 신축공사</li>
+                                <li class="flex items-start"><span class="mr-2 font-bold">-</span> 동작 보라매역 프리센트 신축공사 (TOP-DOWN 공법)</li>
+                                <li class="flex items-start mt-3 pt-3 border-t border-blue-100 font-bold text-brand-blue">
+                                    <span class="mr-2">※</span> 세 번의 무재해 준공 달성
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Divider -->
+                <div class="w-full h-px bg-slate-100 mb-12"></div>
+
+                <!-- 회사 2: 샘코건설 -->
+                <div class="flex flex-col lg:flex-row gap-8 relative">
+                    <!-- Left: Company Info -->
+                    <div class="w-full lg:w-1/3 flex flex-col">
+                        <div class="flex items-center mb-2">
+                            <div class="w-3 h-3 rounded-full bg-slate-300 mr-3 border-2 border-white"></div>
+                            <span class="text-slate-500 font-bold text-sm tracking-wider">직장경력 2</span>
+                        </div>
+                        <h3 class="text-2xl font-extrabold text-slate-800 mb-2 ml-6">샘코건설(주)</h3>
+                        <p class="text-slate-500 font-medium ml-6 mb-1 text-[13px]">(현 샘코씨앤디(주))</p>
+                        <p class="text-slate-500 font-medium ml-6 mb-1 mt-1">2019.06.17 ~ 2022.02.11</p>
+                        <span class="inline-block ml-6 px-3 py-1 bg-slate-100 text-slate-600 text-xs font-bold rounded-md w-max border border-slate-200 mt-2">정규직</span>
+                    </div>
+                    
+                    <!-- Right: Role Info -->
+                    <div class="w-full lg:w-2/3">
+                        <div class="flex flex-wrap gap-3 mb-6">
+                            <div class="flex items-center border border-slate-200 rounded-lg overflow-hidden bg-slate-50">
+                                <span class="px-4 py-2 bg-white font-bold text-slate-700 border-r border-slate-200 text-sm">부서</span>
+                                <span class="px-4 py-2 text-slate-600 text-sm font-medium">건축팀</span>
+                            </div>
+                            <div class="flex items-center border border-slate-200 rounded-lg overflow-hidden bg-slate-50">
+                                <span class="px-4 py-2 bg-white font-bold text-slate-700 border-r border-slate-200 text-sm">직급</span>
+                                <span class="px-4 py-2 text-slate-600 text-sm font-medium">주임</span>
+                            </div>
+                            <div class="flex items-center border border-slate-200 rounded-lg overflow-hidden bg-slate-50">
+                                <span class="px-4 py-2 bg-white font-bold text-slate-700 border-r border-slate-200 text-sm">담당업무</span>
+                                <span class="px-4 py-2 text-slate-600 text-sm font-medium">건축 시공(공사)</span>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-slate-50 p-5 rounded-xl border border-slate-100">
+                            <p class="font-bold text-slate-700 mb-4 text-[14.5px] border-l-4 border-slate-400 pl-3">본사 공무/공사 담당</p>
+                            <h4 class="font-bold text-slate-800 mb-3 flex items-center text-sm">
+                                <i class="fas fa-check text-slate-400 mr-2"></i> 주요 수행 현장 (건축 시공직)
+                            </h4>
+                            <ul class="list-none space-y-2 text-slate-600 text-[14.5px] ml-1">
+                                <li class="flex items-start"><span class="mr-2 font-bold">-</span> 삼성동 친우빌딩 신축공사</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 프로젝트 섹션 영역 확대 -->
+    <section id="projects" class="relative min-h-[120vh] flex flex-col justify-center py-32 scroll-mt-20 bg-slate-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="text-center mb-24">
+                <span class="text-brand-blue font-bold tracking-wider uppercase text-sm">Projects</span>
+                <h2 class="text-4xl font-bold text-brand-navy mt-2">상세 프로젝트 수행 이력</h2>
+                <div class="w-20 h-1.5 bg-brand-blue mx-auto mt-6 rounded-full"></div>
+            </div>
+
+            <!-- Timeline Container -->
+            <div class="relative max-w-5xl mx-auto">
+                <!-- Vertical Line -->
+                <div class="absolute left-6 md:left-1/2 top-0 bottom-0 w-1 bg-slate-200 -translate-x-1/2 rounded-full"></div>
+
+                <!-- Project Item 1 -->
+                <div class="relative flex flex-col md:flex-row items-center justify-between mb-32 group">
+                    <div class="absolute left-6 md:left-1/2 w-6 h-6 bg-brand-blue rounded-full -translate-x-1/2 shadow-[0_0_0_6px_rgba(255,255,255,1),0_0_0_10px_rgba(37,99,235,0.2)] z-10"></div>
+                    
+                    <div class="w-full md:w-5/12 pl-16 md:pl-0 md:pr-16 md:text-right">
+                        <div class="bg-white rounded-2xl shadow-lg border border-slate-100 overflow-hidden hover:shadow-2xl transition-all duration-300 transform md:group-hover:-translate-x-2 flex flex-col">
+                            <!-- bg-slate-100 및 object-contain 적용으로 이미지 잘림 방지 -->
+                            <div class="relative w-full h-64 md:h-72 overflow-hidden group/slider bg-slate-100" id="slider-boramae">
+                                <div class="flex transition-transform duration-500 ease-in-out h-full w-full" id="track-boramae">
+                                    <img src="https://i.imgur.com/apd2r5z.jpeg" alt="보라매역 현장 1" class="w-full h-full object-contain cursor-pointer hover:scale-105 transition-transform" onclick="openModal('https://i.imgur.com/apd2r5z.jpeg')" flex-shrink-0">
+                                    <img src="https://i.imgur.com/GEONIBB.jpeg" alt="보라매역 현장 2" class="w-full h-full object-contain cursor-pointer hover:scale-105 transition-transform" onclick="openModal('https://i.imgur.com/GEONIBB.jpeg')" flex-shrink-0">
+                                    <img src="https://i.imgur.com/Q7MxaH7.jpeg" alt="보라매역 현장 3" class="w-full h-full object-contain cursor-pointer hover:scale-105 transition-transform" onclick="openModal('https://i.imgur.com/Q7MxaH7.jpeg')" flex-shrink-0">
+                                </div>
+                                <button onclick="moveSlide('boramae', -1)" class="absolute left-3 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center bg-black/40 text-white rounded-full opacity-0 group-hover/slider:opacity-100 hover:bg-brand-blue transition-all z-10"><i class="fas fa-chevron-left text-sm"></i></button>
+                                <button onclick="moveSlide('boramae', 1)" class="absolute right-3 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center bg-black/40 text-white rounded-full opacity-0 group-hover/slider:opacity-100 hover:bg-brand-blue transition-all z-10"><i class="fas fa-chevron-right text-sm"></i></button>
+                                <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+                                    <div class="w-2 h-2 rounded-full bg-slate-800 transition-colors shadow-sm" id="dot-boramae-0"></div>
+                                    <div class="w-2 h-2 rounded-full bg-slate-400 transition-colors shadow-sm" id="dot-boramae-1"></div>
+                                    <div class="w-2 h-2 rounded-full bg-slate-400 transition-colors shadow-sm" id="dot-boramae-2"></div>
+                                </div>
+                                <!-- 돋보기 아이콘 오버레이 -->
+                                <div class="absolute top-3 right-3 bg-black/50 text-white px-2 py-1 rounded text-xs pointer-events-none opacity-0 group-hover/slider:opacity-100 transition-opacity z-10">
+                                    <i class="fas fa-search-plus"></i> 클릭하여 확대
+                                </div>
+                            </div>
+                            <div class="p-7 text-left flex-1 bg-white">
+                                <span class="inline-block px-4 py-1 bg-blue-50 text-brand-blue text-sm font-bold rounded-full mb-3">2024.07 ~ 2026.07</span>
+                                <h3 class="text-2xl font-extrabold text-brand-navy mb-3">동작 보라매역 프리센트 신축공사</h3>
+                                
+                                <div class="text-sm text-slate-600 mb-4 space-y-1 bg-slate-50 p-3 rounded-lg border border-slate-100">
+                                    <p><span class="font-bold w-[70px] inline-block text-slate-700">발주처</span> : 엔에이디벨롭먼트(주)</p>
+                                    <p><span class="font-bold w-[70px] inline-block text-slate-700">근무처</span> : 에이스디엔시(주)</p>
+                                    <p><span class="font-bold w-[70px] inline-block text-slate-700">참여역할</span> : 공사(건축 시공)</p>
+                                </div>
+
+                                <div class="mb-4">
+                                    <h4 class="font-bold text-slate-800 mb-1.5"><i class="fas fa-info-circle text-brand-blue mr-1"></i> 프로젝트 개요</h4>
+                                    <ul class="list-disc list-inside text-slate-600 text-sm space-y-1.5 ml-1 break-keep">
+                                        <li><span class="font-semibold">규모:</span> 연면적 23,765㎡, 지하 4층~지상 20층 (공동주택 124세대, 오피스텔 64세대, 근린생활생시설 지하1층~4층)</li>
+                                        <li><span class="font-semibold">공법:</span> RC조, C.I.P, TOP-DOWN, PRD, 커튼월 공법</li>
+                                        <li><span class="font-semibold">직책:</span> 건축시공 선임(대리)</li>
+                                    </ul>
+                                </div>
+                                
+                                <button onclick="toggleDetails('details-boramae')" class="mt-2 flex items-center justify-center w-full py-2 bg-slate-50 hover:bg-blue-50 border border-slate-200 hover:border-blue-200 text-slate-700 hover:text-brand-blue rounded-lg font-bold text-sm transition-colors">
+                                    상세 성과 보기 <i id="icon-details-boramae" class="fas fa-chevron-down ml-2 transition-transform duration-300"></i>
+                                </button>
+                                
+                                <div id="details-boramae" class="hidden mt-4 pt-4 border-t border-slate-100 animate-[fadeIn_0.3s_ease-out]">
+                                    <h4 class="font-bold text-slate-800 mb-2"><i class="fas fa-trophy text-yellow-500 mr-1"></i> 주요 수행업무 및 성과</h4>
+                                    <ul class="list-disc list-outside ml-5 text-slate-600 text-[13.5px] leading-relaxed space-y-2 break-keep">
+                                        <li><span class="font-bold text-slate-700">고난도 도심지 공사 수행:</span> 협소한 부지 특성을 반영한 양중 및 물류 반입 계획 수립</li>
+                                        <li><span class="font-bold text-slate-700">특수공법 시공 관리:</span> PRD 및 TOP-DOWN 공법 적용 구간의 굴착 및 골조 동시 진행에 따른 구조적 안정성 확보 및 리스크 통제</li>
+                                        <li><span class="font-bold text-slate-700">인터페이스 조율:</span> 건축/설비/전기 상세도(Shop) 사전 교차 검토로 타 공종 간 간섭 및 재시공 문제 선제 차단</li>
+                                        <li><span class="font-bold text-slate-700">공정/품질 관리:</span> 커튼월 외장 공사 및 내부 세대 마감 공정 지휘, 철저한 품질 기준 적용으로 성공적인 공기 준수</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hidden md:block w-5/12"></div>
+                </div>
+
+                <!-- Project Item 2 -->
+                <div class="relative flex flex-col md:flex-row items-center justify-between mb-32 group">
+                    <div class="absolute left-6 md:left-1/2 w-5 h-5 bg-slate-300 rounded-full -translate-x-1/2 shadow-[0_0_0_6px_rgba(255,255,255,1)] z-10 group-hover:bg-brand-blue group-hover:w-6 group-hover:h-6 transition-all duration-300"></div>
+                    <div class="hidden md:block w-5/12"></div>
+                    
+                    <div class="w-full md:w-5/12 pl-16 md:pl-16">
+                        <div class="bg-white rounded-2xl shadow-lg border border-slate-100 overflow-hidden hover:shadow-2xl transition-all duration-300 transform md:group-hover:translate-x-2 flex flex-col">
+                            <div class="relative w-full h-64 md:h-72 overflow-hidden group/slider bg-slate-100" id="slider-ctower">
+                                <div class="flex transition-transform duration-500 ease-in-out h-full w-full" id="track-ctower">
+                                    <img src="https://i.imgur.com/h4Ig57N.jpeg" alt="C-TOWER 현장 1" class="w-full h-full object-contain cursor-pointer hover:scale-105 transition-transform" onclick="openModal('https://i.imgur.com/h4Ig57N.jpeg')" flex-shrink-0">
+                                    <img src="https://i.imgur.com/J24i99K.jpeg" alt="C-TOWER 현장 2" class="w-full h-full object-contain cursor-pointer hover:scale-105 transition-transform" onclick="openModal('https://i.imgur.com/J24i99K.jpeg')" flex-shrink-0">
+                                    <img src="https://i.imgur.com/7HiOHsh.jpeg" alt="C-TOWER 현장 3" class="w-full h-full object-contain cursor-pointer hover:scale-105 transition-transform" onclick="openModal('https://i.imgur.com/7HiOHsh.jpeg')" flex-shrink-0">
+                                </div>
+                                <button onclick="moveSlide('ctower', -1)" class="absolute left-3 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center bg-black/40 text-white rounded-full opacity-0 group-hover/slider:opacity-100 hover:bg-brand-blue transition-all z-10"><i class="fas fa-chevron-left text-sm"></i></button>
+                                <button onclick="moveSlide('ctower', 1)" class="absolute right-3 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center bg-black/40 text-white rounded-full opacity-0 group-hover/slider:opacity-100 hover:bg-brand-blue transition-all z-10"><i class="fas fa-chevron-right text-sm"></i></button>
+                                <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+                                    <div class="w-2 h-2 rounded-full bg-slate-800 transition-colors shadow-sm" id="dot-ctower-0"></div>
+                                    <div class="w-2 h-2 rounded-full bg-slate-400 transition-colors shadow-sm" id="dot-ctower-1"></div>
+                                    <div class="w-2 h-2 rounded-full bg-slate-400 transition-colors shadow-sm" id="dot-ctower-2"></div>
+                                </div>
+                                <div class="absolute top-3 right-3 bg-black/50 text-white px-2 py-1 rounded text-xs pointer-events-none opacity-0 group-hover/slider:opacity-100 transition-opacity z-10">
+                                    <i class="fas fa-search-plus"></i> 클릭하여 확대
+                                </div>
+                            </div>
+                            <div class="p-7 text-left flex-1 bg-white">
+                                <span class="inline-block px-4 py-1 bg-slate-100 text-slate-600 text-sm font-bold rounded-full mb-3">2023.10 ~ 2024.06</span>
+                                <h3 class="text-2xl font-extrabold text-brand-navy mb-3">영등포 C-TOWER 신축공사</h3>
+                                
+                                <div class="text-sm text-slate-600 mb-4 space-y-1 bg-slate-50 p-3 rounded-lg border border-slate-100">
+                                    <p><span class="font-bold w-[70px] inline-block text-slate-700">발주처</span> : (주)코다에셋</p>
+                                    <p><span class="font-bold w-[70px] inline-block text-slate-700">근무처</span> : 에이스디엔시(주)</p>
+                                    <p><span class="font-bold w-[70px] inline-block text-slate-700">참여역할</span> : 공사(건축 시공)</p>
+                                </div>
+
+                                <div class="mb-4">
+                                    <h4 class="font-bold text-slate-800 mb-1.5"><i class="fas fa-info-circle text-brand-blue mr-1"></i> 프로젝트 개요</h4>
+                                    <ul class="list-disc list-inside text-slate-600 text-sm space-y-1.5 ml-1 break-keep">
+                                        <li><span class="font-semibold">규모:</span> 연면적 17,194㎡, 지하 5층~지상 15층 (지식산업센터, 근생)</li>
+                                        <li><span class="font-semibold">공법:</span> 철근콘크리트조, C.I.P, 커튼월 공법 등</li>
+                                        <li><span class="font-semibold">직책:</span> 건축시공 선임(주임)</li>
+                                    </ul>
+                                </div>
+
+                                <button onclick="toggleDetails('details-ctower')" class="mt-2 flex items-center justify-center w-full py-2 bg-slate-50 hover:bg-blue-50 border border-slate-200 hover:border-blue-200 text-slate-700 hover:text-brand-blue rounded-lg font-bold text-sm transition-colors">
+                                    상세 성과 보기 <i id="icon-details-ctower" class="fas fa-chevron-down ml-2 transition-transform duration-300"></i>
+                                </button>
+                                
+                                <div id="details-ctower" class="hidden mt-4 pt-4 border-t border-slate-100 animate-[fadeIn_0.3s_ease-out]">
+                                    <h4 class="font-bold text-slate-800 mb-2"><i class="fas fa-trophy text-yellow-500 mr-1"></i> 주요 수행업무 및 성과</h4>
+                                    <ul class="list-disc list-outside ml-5 text-slate-600 text-[13.5px] leading-relaxed space-y-2 break-keep">
+                                        <li><span class="font-bold text-slate-700">마감 공사 완수:</span> 지상 8층 골조 시점에 투입되어 15층까지의 골조를 완료하고, 커튼월 외장 및 전 층 내부 마감 공사를 지연 없이 성공적으로 주도함</li>
+                                        <li><span class="font-bold text-slate-700">지하 고질적 누수 차단:</span> 하천 인접 및 높은 지하수위로 인한 지하 5층 구간의 심각한 누수 문제를 전담함. 수분 침투 경로를 추적하고 현장 여건에 맞춘 다각적인 지수 대책을 적용해 하자를 차단했으며, 현재 대학원 연구의 강력한 실무적 기반이 됨</li>
+                                        <li><span class="font-bold text-slate-700">현장/공무 실무:</span> 하도급 기성 정산 및 근로자 안전 통제 병행</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Item 3 -->
+                <div class="relative flex flex-col md:flex-row items-center justify-between mb-32 group">
+                    <div class="absolute left-6 md:left-1/2 w-5 h-5 bg-slate-300 rounded-full -translate-x-1/2 shadow-[0_0_0_6px_rgba(255,255,255,1)] z-10 group-hover:bg-brand-blue group-hover:w-6 group-hover:h-6 transition-all duration-300"></div>
+                    
+                    <div class="w-full md:w-5/12 pl-16 md:pl-0 md:pr-16 md:text-right">
+                        <div class="bg-white rounded-2xl shadow-lg border border-slate-100 overflow-hidden hover:shadow-2xl transition-all duration-300 transform md:group-hover:-translate-x-2 flex flex-col">
+                            <div class="relative w-full h-64 md:h-72 overflow-hidden group/slider bg-slate-100" id="slider-byeongjeom">
+                                <div class="flex transition-transform duration-500 ease-in-out h-full w-full" id="track-byeongjeom">
+                                    <img src="https://i.imgur.com/B5hhTmy.png" alt="병점복합타운 현장 1" class="w-full h-full object-contain cursor-pointer hover:scale-105 transition-transform" onclick="openModal('https://i.imgur.com/B5hhTmy.png')" flex-shrink-0">
+                                    <img src="https://i.imgur.com/re1bvfS.jpeg" alt="병점복합타운 현장 2" class="w-full h-full object-contain cursor-pointer hover:scale-105 transition-transform" onclick="openModal('https://i.imgur.com/re1bvfS.jpeg')" flex-shrink-0">
+                                </div>
+                                <button onclick="moveSlide('byeongjeom', -1)" class="absolute left-3 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center bg-black/40 text-white rounded-full opacity-0 group-hover/slider:opacity-100 hover:bg-brand-blue transition-all z-10"><i class="fas fa-chevron-left text-sm"></i></button>
+                                <button onclick="moveSlide('byeongjeom', 1)" class="absolute right-3 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center bg-black/40 text-white rounded-full opacity-0 group-hover/slider:opacity-100 hover:bg-brand-blue transition-all z-10"><i class="fas fa-chevron-right text-sm"></i></button>
+                                <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+                                    <div class="w-2 h-2 rounded-full bg-slate-800 transition-colors shadow-sm" id="dot-byeongjeom-0"></div>
+                                    <div class="w-2 h-2 rounded-full bg-slate-400 transition-colors shadow-sm" id="dot-byeongjeom-1"></div>
+                                </div>
+                                <div class="absolute top-3 right-3 bg-black/50 text-white px-2 py-1 rounded text-xs pointer-events-none opacity-0 group-hover/slider:opacity-100 transition-opacity z-10">
+                                    <i class="fas fa-search-plus"></i> 클릭하여 확대
+                                </div>
+                            </div>
+                            <div class="p-7 text-left flex-1 bg-white">
+                                <span class="inline-block px-4 py-1 bg-slate-100 text-slate-600 text-sm font-bold rounded-full mb-3">2022.02 ~ 2024.06</span>
+                                <h3 class="text-2xl font-extrabold text-brand-navy mb-3">병점복합타운 상업용지 신축공사</h3>
+                                
+                                <div class="text-sm text-slate-600 mb-4 space-y-1 bg-slate-50 p-3 rounded-lg border border-slate-100">
+                                    <p><span class="font-bold w-[70px] inline-block text-slate-700">발주처</span> : (주)경기중앙산업</p>
+                                    <p><span class="font-bold w-[70px] inline-block text-slate-700">근무처</span> : 에이스디엔시(주)</p>
+                                    <p><span class="font-bold w-[70px] inline-block text-slate-700">참여역할</span> : 공사(건축 시공)</p>
+                                </div>
+
+                                <div class="mb-4">
+                                    <h4 class="font-bold text-slate-800 mb-1.5"><i class="fas fa-info-circle text-brand-blue mr-1"></i> 프로젝트 개요</h4>
+                                    <ul class="list-disc list-inside text-slate-600 text-sm space-y-1.5 ml-1 break-keep">
+                                        <li><span class="font-semibold">규모:</span> 연면적 13,799㎡, 지하 4층~지상 10층 (업무시설 및 근생)</li>
+                                        <li><span class="font-semibold">공법:</span> RC조, C.I.P 공법, 커튼월 공법</li>
+                                        <li><span class="font-semibold">직책:</span> 건축시공 주임</li>
+                                    </ul>
+                                </div>
+
+                                <button onclick="toggleDetails('details-byeongjeom')" class="mt-2 flex items-center justify-center w-full py-2 bg-slate-50 hover:bg-blue-50 border border-slate-200 hover:border-blue-200 text-slate-700 hover:text-brand-blue rounded-lg font-bold text-sm transition-colors">
+                                    상세 성과 보기 <i id="icon-details-byeongjeom" class="fas fa-chevron-down ml-2 transition-transform duration-300"></i>
+                                </button>
+                                
+                                <div id="details-byeongjeom" class="hidden mt-4 pt-4 border-t border-slate-100 animate-[fadeIn_0.3s_ease-out]">
+                                    <h4 class="font-bold text-slate-800 mb-2"><i class="fas fa-trophy text-yellow-500 mr-1"></i> 주요 수행업무 및 성과</h4>
+                                    <ul class="list-disc list-outside ml-5 text-slate-600 text-[13.5px] leading-relaxed space-y-2 break-keep">
+                                        <li><span class="font-bold text-slate-700">시공 및 공정 관리:</span> 상업건축물 전 과정 시공 관리, 현장 스케줄링 및 협력사 물량 검수 전담</li>
+                                        <li><span class="font-bold text-slate-700">동절기 균열 대응 및 구조보강 주도:</span> 지하층 동절기 타설 구간에서 초기 동해 및 수화열로 인한 구조적 균열 징후를 선제적으로 포착함. 정밀 추적조사를 통해 잠재적 구조 결함을 규명하고 구조보강 공사를 주도함. 균열부 응력 분산을 위한 탄소섬유 보강과 전단력 강화를 위한 철골(H-BEAM) 보강 구조물 설치를 병행 전개하여 건물의 구조적 안정성을 완벽히 확보함</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hidden md:block w-5/12"></div>
+                </div>
+
+                <!-- Project Item 4 -->
+                <div class="relative flex flex-col md:flex-row items-center justify-between group">
+                    <div class="absolute left-6 md:left-1/2 w-5 h-5 bg-slate-300 rounded-full -translate-x-1/2 shadow-[0_0_0_6px_rgba(255,255,255,1)] z-10 group-hover:bg-brand-blue group-hover:w-6 group-hover:h-6 transition-all duration-300"></div>
+                    <div class="hidden md:block w-5/12"></div>
+                    
+                    <div class="w-full md:w-5/12 pl-16 md:pl-16">
+                        <div class="bg-white rounded-2xl shadow-lg border border-slate-100 overflow-hidden hover:shadow-2xl transition-all duration-300 transform md:group-hover:translate-x-2 flex flex-col">
+                            <div class="relative w-full h-64 md:h-72 overflow-hidden group/slider bg-slate-100" id="slider-samseong">
+                                <div class="flex transition-transform duration-500 ease-in-out h-full w-full" id="track-samseong">
+                                    <img src="https://i.imgur.com/1dm4nMB.jpeg" alt="삼성동 친우빌딩 현장 1" class="w-full h-full object-contain cursor-pointer hover:scale-105 transition-transform" onclick="openModal('https://i.imgur.com/1dm4nMB.jpeg')" flex-shrink-0">
+                                    <img src="https://i.imgur.com/CnueDtt.jpeg" alt="삼성동 친우빌딩 현장 2" class="w-full h-full object-contain cursor-pointer hover:scale-105 transition-transform" onclick="openModal('https://i.imgur.com/CnueDtt.jpeg')" flex-shrink-0">
+                                </div>
+                                <button onclick="moveSlide('samseong', -1)" class="absolute left-3 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center bg-black/40 text-white rounded-full opacity-0 group-hover/slider:opacity-100 hover:bg-brand-blue transition-all z-10"><i class="fas fa-chevron-left text-sm"></i></button>
+                                <button onclick="moveSlide('samseong', 1)" class="absolute right-3 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center bg-black/40 text-white rounded-full opacity-0 group-hover/slider:opacity-100 hover:bg-brand-blue transition-all z-10"><i class="fas fa-chevron-right text-sm"></i></button>
+                                <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+                                    <div class="w-2 h-2 rounded-full bg-slate-800 transition-colors shadow-sm" id="dot-samseong-0"></div>
+                                    <div class="w-2 h-2 rounded-full bg-slate-400 transition-colors shadow-sm" id="dot-samseong-1"></div>
+                                </div>
+                                <div class="absolute top-3 right-3 bg-black/50 text-white px-2 py-1 rounded text-xs pointer-events-none opacity-0 group-hover/slider:opacity-100 transition-opacity z-10">
+                                    <i class="fas fa-search-plus"></i> 클릭하여 확대
+                                </div>
+                            </div>
+                            <div class="p-7 text-left flex-1 bg-white">
+                                <span class="inline-block px-4 py-1 bg-slate-100 text-slate-600 text-sm font-bold rounded-full mb-3">2020.06 ~ 2022.02</span>
+                                <h3 class="text-2xl font-extrabold text-brand-navy mb-3">삼성동 친우빌딩 신축공사</h3>
+                                
+                                <div class="text-sm text-slate-600 mb-4 space-y-1 bg-slate-50 p-3 rounded-lg border border-slate-100">
+                                    <p><span class="font-bold w-[70px] inline-block text-slate-700">발주처</span> : 친우빌딩(박원동)</p>
+                                    <p><span class="font-bold w-[70px] inline-block text-slate-700">근무처</span> : 샘코건설(주)</p>
+                                    <p><span class="font-bold w-[70px] inline-block text-slate-700">참여역할</span> : 공사(건축 시공)</p>
+                                </div>
+
+                                <div class="mb-4">
+                                    <h4 class="font-bold text-slate-800 mb-1.5"><i class="fas fa-info-circle text-brand-blue mr-1"></i> 프로젝트 개요</h4>
+                                    <ul class="list-disc list-inside text-slate-600 text-sm space-y-1.5 ml-1 break-keep">
+                                        <li><span class="font-semibold">규모:</span> 연면적 3,195㎡, 지하 2층~지상 14층 (업무시설 및 근생)</li>
+                                        <li><span class="font-semibold">공법:</span> RC조, C.I.P, 커튼월 공법</li>
+                                        <li><span class="font-semibold">직책:</span> 건축시공 주임</li>
+                                    </ul>
+                                </div>
+
+                                <button onclick="toggleDetails('details-samseong')" class="mt-2 flex items-center justify-center w-full py-2 bg-slate-50 hover:bg-blue-50 border border-slate-200 hover:border-blue-200 text-slate-700 hover:text-brand-blue rounded-lg font-bold text-sm transition-colors">
+                                    상세 성과 보기 <i id="icon-details-samseong" class="fas fa-chevron-down ml-2 transition-transform duration-300"></i>
+                                </button>
+                                
+                                <div id="details-samseong" class="hidden mt-4 pt-4 border-t border-slate-100 animate-[fadeIn_0.3s_ease-out]">
+                                    <h4 class="font-bold text-slate-800 mb-2"><i class="fas fa-trophy text-yellow-500 mr-1"></i> 주요 수행업무 및 성과</h4>
+                                    <ul class="list-disc list-outside ml-5 text-slate-600 text-[13.5px] leading-relaxed space-y-2 break-keep">
+                                        <li><span class="font-bold text-slate-700">전 분야 실무:</span> 현장소장과 단 2인 체제로 착공부터 투입됨. 시공 공정 관리는 물론 품질 검측, 안전 통제, 현장 공무(하도급 정산 등)까지 전천후로 밀착 수행하며 현장 운영의 확고한 뼈대를 다짐</li>
+                                        <li><span class="font-bold text-slate-700">도심지 대관/대민 민원 리스크 통제:</span> 선릉역 인근 초밀집 상권 특성상 지속해서 발생하는 소음 및 교통 대관·대민 민원을 전담하여 선제 조율함. 극히 협소한 부지 내 장비 세팅 및 자재 반입 동선을 치밀하게 기획하여 민원 마찰 없이 성공적으로 준공을 완수함</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="bg-brand-navy border-t border-slate-800 pt-20 pb-12">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-10">
+                
+                <div class="text-center md:text-left">
+                    <h2 class="text-3xl font-bold text-white mb-3">
+                        <span class="text-brand-blue">Con-Tech</span> Engineer
+                    </h2>
+                    <p class="text-slate-400 text-lg">현장을 지휘하는 실행력, 데이터로 혁신하는 미래.</p>
+                </div>
+
+                <div class="flex gap-6">
+                    <button onclick="showContact('email')" class="w-14 h-14 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-300 hover:bg-brand-blue hover:text-white hover:border-brand-blue transition-all duration-300 shadow-lg group focus:outline-none" title="이메일 확인">
+                        <i class="fas fa-envelope text-xl group-hover:scale-110 transition-transform"></i>
+                    </button>
+                    <button onclick="showContact('phone')" class="w-14 h-14 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-300 hover:bg-brand-blue hover:text-white hover:border-brand-blue transition-all duration-300 shadow-lg group focus:outline-none" title="연락처 확인">
+                        <i class="fas fa-phone text-xl group-hover:scale-110 transition-transform"></i>
+                    </button>
+                    <a href="https://github.com/yourusername" target="_blank" class="w-14 h-14 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-300 hover:bg-white hover:text-black hover:border-white transition-all duration-300 shadow-lg group" title="GitHub (플랫폼 소스코드)">
+                        <i class="fab fa-github text-2xl group-hover:scale-110 transition-transform"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="mt-16 pt-8 border-t border-slate-800 text-center text-slate-500 text-sm">
+                <p>&copy; 2024 LEE YONG SANG. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Image Viewer Modal -->
+    <div id="imageModal" class="fixed inset-0 z-[100] hidden flex-col items-center justify-center bg-black/90 backdrop-blur-sm p-4 modal-animate" onclick="closeModal(event)">
+        
+        <!-- Header Toolbar -->
+        <div class="absolute top-0 left-0 w-full flex justify-end p-6 pointer-events-none">
+            <button onclick="closeModal(event)" class="pointer-events-auto text-white/70 hover:text-white bg-slate-800/50 hover:bg-slate-700 p-3 rounded-full backdrop-blur-md transition-colors focus:outline-none">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Image Container -->
+        <div class="relative max-w-full max-h-full flex items-center justify-center overflow-hidden rounded-lg shadow-2xl">
+            <img id="modalImage" src="" alt="증명서 이미지" onerror="this.onerror=null; this.src='https://via.placeholder.com/800x1130/1e293b/ffffff?text=서버에+이미지+업로드+시+정상+출력됩니다'" class="max-w-[95vw] max-h-[90vh] object-contain rounded select-none shadow-[0_0_30px_rgba(0,0,0,0.5)]">
+        </div>
+        
+    </div>
+
+    <!-- Contact Info Modal -->
+    <div id="contactModal" class="fixed inset-0 z-[110] hidden flex-col items-center justify-center bg-black/70 backdrop-blur-sm p-4 modal-animate" onclick="closeContactModal(event)">
+        <div class="bg-white rounded-2xl shadow-2xl max-w-sm w-full p-8 text-center transform scale-95 transition-transform duration-300" id="contactModalContent">
+            <div class="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-4 text-brand-blue shadow-inner" id="contactIcon">
+                <i class="fas fa-info-circle text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-extrabold text-brand-navy mb-2 tracking-tight" id="contactTitle">연락처</h3>
+            <div class="bg-slate-50 border border-slate-100 rounded-lg p-4 mb-6 mt-4">
+                <p class="text-xl text-brand-blue font-bold tracking-wide select-all cursor-text" id="contactText">010-0000-0000</p>
+            </div>
+            <button onclick="closeContactModal(event)" class="w-full py-3.5 bg-brand-navy text-white rounded-xl font-bold hover:bg-brand-blue hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
+                확인
+            </button>
+        </div>
+    </div>
+
+    <!-- Script for Modal Handling -->
+    <script>
+        function openModal(imageSrc) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            
+            modalImg.src = imageSrc;
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            
+            // Prevent background scrolling while modal is open
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(event) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            
+            // Close if clicking outside the image or exactly on the close button
+            if (!event || event.target === modal || event.currentTarget.tagName === 'BUTTON') {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                
+                // Restore background scrolling
+                document.body.style.overflow = '';
+                
+                // Clear source after slight delay to prevent flicker during close
+                setTimeout(() => {
+                    if(modal.classList.contains('hidden')) {
+                        modalImg.src = '';
+                    }
+                }, 200);
+            }
+        }
+
+        // Close on Escape key press
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+                closeContactModal();
+            }
+        });
+
+        // Contact Modal Functions
+        function showContact(type) {
+            const modal = document.getElementById('contactModal');
+            const icon = document.getElementById('contactIcon');
+            const title = document.getElementById('contactTitle');
+            const text = document.getElementById('contactText');
+            
+            if (type === 'email') {
+                icon.innerHTML = '<i class="fas fa-envelope text-2xl"></i>';
+                title.innerText = '이메일 주소';
+                text.innerText = 'fnffnvl94@naver.com';
+            } else if (type === 'phone') {
+                icon.innerHTML = '<i class="fas fa-phone text-2xl"></i>';
+                title.innerText = '연락처';
+                text.innerText = '010-8739-4772';
+            }
+            
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+            
+            // Animation for modal content
+            setTimeout(() => {
+                document.getElementById('contactModalContent').classList.remove('scale-95');
+                document.getElementById('contactModalContent').classList.add('scale-100');
+            }, 10);
+        }
+
+        function closeContactModal(event) {
+            const modal = document.getElementById('contactModal');
+            const content = document.getElementById('contactModalContent');
+            
+            if (!event || event.target === modal || event.currentTarget.tagName === 'BUTTON') {
+                content.classList.remove('scale-100');
+                content.classList.add('scale-95');
+                
+                setTimeout(() => {
+                    modal.classList.add('hidden');
+                    modal.classList.remove('flex');
+                    document.body.style.overflow = '';
+                }, 200);
+            }
+        }
+
+        // Toggle Details Accordion
+        function toggleDetails(id) {
+            const details = document.getElementById(id);
+            const icon = document.getElementById('icon-' + id);
+            
+            if (details.classList.contains('hidden')) {
+                details.classList.remove('hidden');
+                icon.classList.add('rotate-180');
+            } else {
+                details.classList.add('hidden');
+                icon.classList.remove('rotate-180');
+            }
+        }
+
+        const sliders = {
+            'boramae': { current: 0, total: 3 },
+            'ctower': { current: 0, total: 3 },
+            'byeongjeom': { current: 0, total: 2 },
+            'samseong': { current: 0, total: 2 }
+        };
+
+        function moveSlide(id, dir) {
+            const slider = sliders[id];
+            // 방향에 따라 다음 인덱스 계산 (루프되도록 설정)
+            slider.current = (slider.current + dir + slider.total) % slider.total;
+            
+            // 트랙 이동
+            const track = document.getElementById(`track-${id}`);
+            track.style.transform = `translateX(-${slider.current * 100}%)`;
+            
+            // 하단 점(Indicator) 업데이트
+            for(let i=0; i<slider.total; i++) {
+                const dot = document.getElementById(`dot-${id}-${i}`);
+                if(i === slider.current) {
+                    dot.classList.remove('bg-slate-400');
+                    dot.classList.add('bg-slate-800');
+                } else {
+                    dot.classList.remove('bg-slate-800');
+                    dot.classList.add('bg-slate-400');
+                }
+            }
+        }
+    </script>
+</body>
+</html>
