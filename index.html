@@ -8,10 +8,10 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Pretendard Font (Korean Standard Modern Font) -->
+    <!-- Pretendard Font -->
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css" />
     
-    <!-- FontAwesome for Icons -->
+    <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <script>
@@ -23,9 +23,9 @@
                     },
                     colors: {
                         brand: {
-                            blue: '#2563EB', // Smart Blue
-                            navy: '#0f172a', // Slate-900 (Deep Navy)
-                            slate: '#1e293b', // Slate-800
+                            blue: '#2563EB',
+                            navy: '#0f172a',
+                            slate: '#1e293b',
                         }
                     }
                 }
@@ -34,19 +34,14 @@
     </script>
     <style>
         body { font-family: 'Pretendard', sans-serif; }
-        /* Custom Scrollbar */
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #f1f5f9; }
         ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
         ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
         
-        .no-scrollbar::-webkit-scrollbar { display: none; }
-        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-        
-        /* Fade-in Animation for Modal */
         @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
         }
         .modal-animate {
             animation: fadeIn 0.2s ease-out forwards;
@@ -63,12 +58,13 @@
                         <span class="text-brand-blue">Con-Tech</span> Eng.
                     </a>
                 </div>
-                <div class="hidden md:flex space-x-10">
+                <div class="hidden md:flex space-x-8">
                     <a href="#about" class="text-slate-600 hover:text-brand-blue font-semibold transition-colors">소개</a>
                     <a href="#education" class="text-slate-600 hover:text-brand-blue font-semibold transition-colors">학력 & 자격</a>
                     <a href="#competence" class="text-slate-600 hover:text-brand-blue font-semibold transition-colors">핵심 역량</a>
                     <a href="#career" class="text-slate-600 hover:text-brand-blue font-semibold transition-colors">경력 사항</a>
                     <a href="#projects" class="text-slate-600 hover:text-brand-blue font-semibold transition-colors">프로젝트</a>
+                    <a href="#analysis" class="text-slate-600 hover:text-brand-blue font-semibold transition-colors">건축물 분석</a>
                 </div>
                 <div class="md:hidden flex items-center">
                     <button class="text-slate-600 hover:text-brand-navy focus:outline-none">
@@ -79,7 +75,6 @@
         </div>
     </nav>
 
-    <!-- 각 섹션에 min-h-screen 및 py-32 적용하여 섹션 간격 확보 및 스크롤 위치 보정(scroll-mt-20) -->
     <section id="about" class="relative min-h-screen flex items-center pt-32 pb-20 scroll-mt-20 bg-brand-navy overflow-hidden">
         <div class="absolute inset-0 overflow-hidden pointer-events-none">
             <div class="absolute -top-[20%] -right-[10%] w-[70%] h-[70%] rounded-full bg-gradient-to-br from-brand-blue/20 to-transparent blur-3xl"></div>
@@ -91,8 +86,9 @@
             
             <!-- Profile Card -->
             <div class="w-full max-w-sm flex flex-col items-center flex-shrink-0 z-10">
-                <div class="w-40 md:w-48 aspect-[3/4] rounded-2xl border-4 border-white/10 shadow-2xl overflow-hidden mb-6 relative group bg-slate-800 flex-shrink-0 transition-transform hover:-translate-y-2 duration-300">
-                    <img src="https://i.imgur.com/424bk5k.jpeg" alt="이용상 프로필 사진" class="w-full h-full object-cover object-center relative z-0">
+                <!-- 증명사진 비율(3:4)을 고려한 세로형 둥근 사각형 프레임 -->
+                <div class="w-48 aspect-[3/4] rounded-2xl border-4 border-white/10 shadow-2xl overflow-hidden mb-6 relative group bg-slate-800 flex-shrink-0 transition-transform hover:-translate-y-2 duration-300">
+                    <img src="https://i.imgur.com/424bk5k.jpeg" alt="이용상 프로필 사진" class="w-full h-full object-cover object-top relative z-0">
                 </div>
                 
                 <div class="text-center mb-6">
@@ -140,7 +136,6 @@
         </div>
     </section>
 
-    <!-- 독립된 섹션으로 구성 및 여백 대폭 확대 -->
     <section id="education" class="relative min-h-screen flex items-center py-32 scroll-mt-20 bg-slate-50">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
             <div class="text-center mb-20">
@@ -220,7 +215,6 @@
                                             </div>
                                             <div class="ml-4 font-bold text-slate-800 text-lg">건축산업기사</div>
                                         </div>
-                                        <!-- Mobile only info -->
                                         <div class="sm:hidden ml-14 mt-1 text-xs text-slate-500">한국산업인력공단 (2019.05.22)</div>
                                     </td>
                                     <td class="px-5 py-5 whitespace-nowrap hidden sm:table-cell">
@@ -285,66 +279,59 @@
         </div>
     </section>
 
-    <!-- 화면에 꽉 차도록 여백 조정 -->
     <section id="competence" class="relative min-h-screen flex items-center py-32 scroll-mt-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-            <div class="text-center mb-20">
-                <span class="text-brand-blue font-bold tracking-wider uppercase text-sm">Con-Tech Synergy</span>
-                <h2 class="text-4xl font-bold text-brand-navy mt-2">핵심 역량</h2>
+            <div class="text-center mb-24">
+                <span class="text-brand-blue font-bold tracking-wider uppercase text-sm">Core Competence</span>
+                <h2 class="text-4xl font-bold text-brand-navy mt-2">연구 및 콘테크 역량</h2>
                 <div class="w-20 h-1.5 bg-brand-blue mx-auto mt-6 rounded-full"></div>
-                <p class="mt-6 text-lg text-slate-600 max-w-2xl mx-auto break-keep">
-                    전통적인 시공 기술의 깊이 위에 최신 IT 기술을 더하여, 현장의 고질적인 문제를 데이터와 시스템으로 해결합니다.
-                </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-                <!-- Competence 1 (Left) -->
-                <div class="bg-slate-50 rounded-3xl p-10 border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 relative overflow-hidden group">
-                    <div class="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity transform group-hover:scale-110 duration-500">
-                        <i class="fas fa-flask text-9xl text-brand-blue"></i>
-                    </div>
-                    <div class="relative z-10">
-                        <div class="w-16 h-16 bg-white rounded-2xl shadow-sm border border-slate-100 flex items-center justify-center mb-8">
-                            <i class="fas fa-vial text-3xl text-brand-blue"></i>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20">
+                <!-- Competence 1 -->
+                <div class="group">
+                    <div class="bg-slate-50 rounded-3xl p-10 border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 h-full flex flex-col">
+                        <div class="w-16 h-16 bg-blue-100 text-brand-blue rounded-2xl flex items-center justify-center text-3xl mb-8 group-hover:scale-110 group-hover:bg-brand-blue group-hover:text-white transition-all duration-300 shadow-sm">
+                            <i class="fas fa-microscope"></i>
                         </div>
-                        <h3 class="text-2xl font-extrabold text-brand-navy mb-5 break-keep leading-snug">공학적 품질 혁신 :<br/>자가치유 스마트 콘크리트 연구</h3>
-                        <p class="text-slate-600 text-lg leading-relaxed break-keep mb-6">
-                            대학원에서 진행 중인 누수 방지 및 LCC(생애주기비용) 최적화 연구입니다. 미세 균열 발생 시 스스로 결함을 메워 하이엔드 주거 및 데이터센터의 절대적인 방수 품질을 확보하는 첨단 재료 기술을 연구하여 실무 현장의 하자율 Zero에 도전합니다.
+                        <h3 class="text-2xl font-extrabold text-brand-navy mb-4 leading-tight">공학적 품질 혁신:<br/><span class="text-brand-blue">자가치유 스마트 콘크리트</span> 연구</h3>
+                        <p class="text-slate-600 leading-relaxed text-lg flex-1">
+                            대학원에서 진행 중인 누수 방지 및 LCC(생애주기비용) 최적화 연구입니다. 미세 균열 발생 시 콘크리트 스스로 결함을 메워, 하이엔드 주거 및 데이터센터와 같은 특수 목적 건축물의 <strong>절대적 방수 품질</strong>을 확보하는 선도적인 기술을 연구하고 있습니다.
                         </p>
-                        <ul class="space-y-3">
-                            <li class="flex items-start text-base text-slate-700 font-medium">
-                                <i class="fas fa-check-circle text-brand-blue mt-1 mr-3"></i> 구조물 수명 연장 및 유지보수 비용 절감
-                            </li>
-                            <li class="flex items-start text-base text-slate-700 font-medium">
-                                <i class="fas fa-check-circle text-brand-blue mt-1 mr-3"></i> 하이엔드 건축물 방수 특화 설계 적용 가능
-                            </li>
-                        </ul>
+                        <div class="mt-8 pt-6 border-t border-slate-200">
+                            <ul class="space-y-3 text-slate-600">
+                                <li class="flex items-center"><i class="fas fa-check-circle text-brand-blue mr-3"></i> 구조적 내구성 및 방수 성능 극대화</li>
+                                <li class="flex items-center"><i class="fas fa-check-circle text-brand-blue mr-3"></i> 건축물 유지보수 비용(LCC) 절감</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Competence 2 (Right) -->
-                <div class="bg-brand-navy text-white rounded-3xl p-10 shadow-xl relative overflow-hidden group">
-                    <div class="absolute inset-0 bg-gradient-to-br from-brand-blue/30 to-transparent opacity-60"></div>
-                    <div class="relative z-10 flex flex-col h-full">
-                        <div class="w-16 h-16 bg-white/10 backdrop-blur-md rounded-2xl flex items-center justify-center mb-8 border border-white/20">
-                            <i class="fas fa-code text-3xl text-white"></i>
+                <!-- Competence 2 -->
+                <div class="group">
+                    <div class="bg-brand-navy rounded-3xl p-10 border border-slate-800 shadow-xl hover:shadow-2xl hover:border-brand-blue/50 transition-all duration-300 h-full flex flex-col relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-64 h-64 bg-brand-blue/10 rounded-full blur-3xl -mr-20 -mt-20 pointer-events-none"></div>
+                        
+                        <div class="w-16 h-16 bg-slate-800 text-brand-blue border border-slate-700 rounded-2xl flex items-center justify-center text-3xl mb-8 group-hover:scale-110 transition-all duration-300 shadow-sm z-10">
+                            <i class="fas fa-code"></i>
                         </div>
-                        <h3 class="text-2xl font-extrabold text-white mb-5 break-keep leading-snug">스마트 건설 현장 관리<br/>플랫폼 자체 개발</h3>
-                        <p class="text-slate-300 text-lg leading-relaxed mb-6 break-keep">
-                            Google Firebase, GitHub, Vercel을 활용해 직접 개발 및 배포한 중소형 현장 맞춤형 플랫폼입니다. 수기 검측을 '스마트 체크리스트'로 모듈화하여 실시간 클라우드 동기화를 구현하고, 데이터 기반 마감 하자 리스크를 선제적으로 통제합니다.
+                        <h3 class="text-2xl font-extrabold text-white mb-4 leading-tight z-10">스마트 건설 현장 관리<br/>플랫폼 <span class="text-brand-blue">자체 개발</span></h3>
+                        <p class="text-slate-300 leading-relaxed text-lg flex-1 z-10">
+                            Google Firebase, GitHub, Vercel을 활용해 직접 기획·개발·배포한 중소형 현장 맞춤형 플랫폼입니다. 기존의 수기 검측 방식을 <strong>'스마트 체크리스트'</strong>로 모듈화하여 실시간 클라우드 동기화를 구현하고, 데이터 기반으로 마감 하자 리스크를 선제적으로 통제합니다.
                         </p>
                         
-                        <a href="https://precent.vercel.app/" target="_blank" class="inline-flex items-center justify-center px-6 py-3 bg-brand-blue/20 border border-brand-blue text-blue-300 font-bold rounded-xl hover:bg-brand-blue hover:text-white hover:shadow-[0_0_20px_rgba(37,99,235,0.4)] transition-all duration-300 w-max mb-8 group/btn">
-                            <i class="fas fa-laptop-code mr-2 group-hover/btn:animate-bounce"></i> 플랫폼 서비스 바로가기
-                        </a>
+                        <div class="mt-8 z-10">
+                            <a href="https://precent.vercel.app/" target="_blank" class="inline-flex items-center justify-center w-full sm:w-auto px-6 py-3.5 bg-brand-blue hover:bg-blue-600 text-white font-bold rounded-xl transition-colors shadow-lg shadow-blue-500/30 group/btn">
+                                <i class="fas fa-external-link-alt mr-2 group-hover/btn:-translate-y-0.5 group-hover/btn:translate-x-0.5 transition-transform"></i> 플랫폼 서비스 바로가기
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 직장 경력 (회사 단위) 추가 -->
-    <section id="career" class="relative min-h-[80vh] flex flex-col justify-center py-32 scroll-mt-20 bg-slate-100">
+    <section id="career" class="relative min-h-screen flex flex-col justify-center py-32 scroll-mt-20 bg-slate-100">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
             <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-10 border-b border-slate-300 pb-4 gap-4">
                 <div>
@@ -455,8 +442,7 @@
         </div>
     </section>
 
-    <!-- 프로젝트 섹션 영역 확대 -->
-    <section id="projects" class="relative min-h-[120vh] flex flex-col justify-center py-32 scroll-mt-20 bg-slate-50">
+    <section id="projects" class="relative min-h-screen flex flex-col justify-center py-32 scroll-mt-20 bg-slate-50">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
             <div class="text-center mb-24">
                 <span class="text-brand-blue font-bold tracking-wider uppercase text-sm">Projects</span>
@@ -475,7 +461,6 @@
                     
                     <div class="w-full md:w-5/12 pl-16 md:pl-0 md:pr-16 md:text-right">
                         <div class="bg-white rounded-2xl shadow-lg border border-slate-100 overflow-hidden hover:shadow-2xl transition-all duration-300 transform md:group-hover:-translate-x-2 flex flex-col">
-                            <!-- bg-slate-100 및 object-contain 적용으로 이미지 잘림 방지 -->
                             <div class="relative w-full h-64 md:h-72 overflow-hidden group/slider bg-slate-100" id="slider-boramae">
                                 <div class="flex transition-transform duration-500 ease-in-out h-full w-full" id="track-boramae">
                                     <img src="https://i.imgur.com/apd2r5z.jpeg" alt="보라매역 현장 1" class="w-full h-full object-contain cursor-pointer hover:scale-105 transition-transform" onclick="openModal('https://i.imgur.com/apd2r5z.jpeg')" flex-shrink-0">
@@ -489,7 +474,6 @@
                                     <div class="w-2 h-2 rounded-full bg-slate-400 transition-colors shadow-sm" id="dot-boramae-1"></div>
                                     <div class="w-2 h-2 rounded-full bg-slate-400 transition-colors shadow-sm" id="dot-boramae-2"></div>
                                 </div>
-                                <!-- 돋보기 아이콘 오버레이 -->
                                 <div class="absolute top-3 right-3 bg-black/50 text-white px-2 py-1 rounded text-xs pointer-events-none opacity-0 group-hover/slider:opacity-100 transition-opacity z-10">
                                     <i class="fas fa-search-plus"></i> 클릭하여 확대
                                 </div>
@@ -582,7 +566,7 @@
                                 <div id="details-ctower" class="hidden mt-4 pt-4 border-t border-slate-100 animate-[fadeIn_0.3s_ease-out]">
                                     <h4 class="font-bold text-slate-800 mb-2"><i class="fas fa-trophy text-yellow-500 mr-1"></i> 주요 수행업무 및 성과</h4>
                                     <ul class="list-disc list-outside ml-5 text-slate-600 text-[13.5px] leading-relaxed space-y-2 break-keep">
-                                        <li><span class="font-bold text-slate-700">마감 공사 완수:</span> 지상 8층 골조 시점에 투입되어 15층까지의 골조를 완료하고, 커튼월 외장 및 전 층 내부 마감 공사를 지연 없이 성공적으로 주도함</li>
+                                        <li><span class="font-bold text-slate-700">마감 공 준수:</span> 지상 8층 골조 시점에 투입되어 15층까지의 골조를 완료하고, 커튼월 외장 및 전 층 내부 마감 공사를 지연 없이 성공적으로 주도함</li>
                                         <li><span class="font-bold text-slate-700">지하 고질적 누수 차단:</span> 하천 인접 및 높은 지하수위로 인한 지하 5층 구간의 심각한 누수 문제를 전담함. 수분 침투 경로를 추적하고 현장 여건에 맞춘 다각적인 지수 대책을 적용해 하자를 차단했으며, 현재 대학원 연구의 강력한 실무적 기반이 됨</li>
                                         <li><span class="font-bold text-slate-700">현장/공무 실무:</span> 하도급 기성 정산 및 근로자 안전 통제 병행</li>
                                     </ul>
@@ -710,6 +694,60 @@
         </div>
     </section>
 
+    <section id="analysis" class="relative min-h-[80vh] flex flex-col justify-center py-32 scroll-mt-20 bg-slate-100 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="text-center mb-20">
+                <span class="text-brand-blue font-bold tracking-wider uppercase text-sm">Research & Analysis</span>
+                <h2 class="text-4xl font-bold text-brand-navy mt-2">건축물 분석</h2>
+                <div class="w-20 h-1.5 bg-brand-blue mx-auto mt-6 rounded-full"></div>
+                <p class="mt-6 text-lg text-slate-600 max-w-2xl mx-auto break-keep">
+                    공학적 시각을 바탕으로 초고층 건축물의 구조적 특징과 붕괴 사례의 근본 원인을 심층 분석한 학술 영상입니다.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                <!-- Video 1 -->
+                <div class="bg-white p-7 rounded-3xl border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 group">
+                    <h3 class="text-xl font-extrabold text-slate-800 mb-5 flex items-center break-keep">
+                        <i class="fab fa-youtube text-red-500 mr-3 text-2xl group-hover:scale-110 transition-transform"></i> 
+                        건축물 분석 (아베노하루카스의 구조설계)
+                    </h3>
+                    <div class="relative w-full aspect-video rounded-2xl overflow-hidden shadow-inner bg-slate-100">
+                        <!-- Error 153 방지를 위해 youtube-nocookie.com 및 strict-origin-when-cross-origin 적용 -->
+                        <iframe 
+                            class="absolute top-0 left-0 w-full h-full" 
+                            src="https://www.youtube-nocookie.com/embed/zmhJBOolRm0?rel=0" 
+                            title="아베노 하루카스 구조설계 분석" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            referrerpolicy="strict-origin-when-cross-origin"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+
+                <!-- Video 2 -->
+                <div class="bg-white p-7 rounded-3xl border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 group">
+                    <h3 class="text-xl font-extrabold text-slate-800 mb-5 flex items-center break-keep">
+                        <i class="fab fa-youtube text-red-500 mr-3 text-2xl group-hover:scale-110 transition-transform"></i> 
+                        건축물 분석 (챔플레인타워사우스의 붕괴)
+                    </h3>
+                    <div class="relative w-full aspect-video rounded-2xl overflow-hidden shadow-inner bg-slate-100">
+                        <iframe 
+                            class="absolute top-0 left-0 w-full h-full" 
+                            src="https://www.youtube-nocookie.com/embed/iL5MmXHB5NA?rel=0" 
+                            title="챔플레인타워사우스의 붕괴 분석" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            referrerpolicy="strict-origin-when-cross-origin"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <footer id="contact" class="bg-brand-navy border-t border-slate-800 pt-20 pb-12">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row justify-between items-center gap-10">
@@ -718,7 +756,7 @@
                     <h2 class="text-3xl font-bold text-white mb-3">
                         <span class="text-brand-blue">Con-Tech</span> Engineer
                     </h2>
-                    <p class="text-slate-400 text-lg">현장을 지휘하는 실행력, 데이터로 혁신하는 미래.</p>
+                    <p class="text-slate-400 text-lg">현장을 장악하는 실행력, 데이터로 혁신하는 미래.</p>
                 </div>
 
                 <div class="flex gap-6">
@@ -742,19 +780,14 @@
 
     <!-- Image Viewer Modal -->
     <div id="imageModal" class="fixed inset-0 z-[100] hidden flex-col items-center justify-center bg-black/90 backdrop-blur-sm p-4 modal-animate" onclick="closeModal(event)">
-        
-        <!-- Header Toolbar -->
         <div class="absolute top-0 left-0 w-full flex justify-end p-6 pointer-events-none">
             <button onclick="closeModal(event)" class="pointer-events-auto text-white/70 hover:text-white bg-slate-800/50 hover:bg-slate-700 p-3 rounded-full backdrop-blur-md transition-colors focus:outline-none">
                 <i class="fas fa-times text-2xl"></i>
             </button>
         </div>
-
-        <!-- Image Container -->
         <div class="relative max-w-full max-h-full flex items-center justify-center overflow-hidden rounded-lg shadow-2xl">
-            <img id="modalImage" src="" alt="증명서 이미지" onerror="this.onerror=null; this.src='https://via.placeholder.com/800x1130/1e293b/ffffff?text=서버에+이미지+업로드+시+정상+출력됩니다'" class="max-w-[95vw] max-h-[90vh] object-contain rounded select-none shadow-[0_0_30px_rgba(0,0,0,0.5)]">
+            <img id="modalImage" src="" alt="확대 이미지" onerror="this.onerror=null; this.src='https://via.placeholder.com/800x1130/1e293b/ffffff?text=서버에+이미지+업로드+시+정상+출력됩니다'" class="max-w-[95vw] max-h-[90vh] object-contain rounded select-none shadow-[0_0_30px_rgba(0,0,0,0.5)]">
         </div>
-        
     </div>
 
     <!-- Contact Info Modal -->
@@ -773,7 +806,6 @@
         </div>
     </div>
 
-    <!-- Script for Modal Handling -->
     <script>
         function openModal(imageSrc) {
             const modal = document.getElementById('imageModal');
@@ -782,8 +814,6 @@
             modalImg.src = imageSrc;
             modal.classList.remove('hidden');
             modal.classList.add('flex');
-            
-            // Prevent background scrolling while modal is open
             document.body.style.overflow = 'hidden';
         }
 
@@ -791,15 +821,11 @@
             const modal = document.getElementById('imageModal');
             const modalImg = document.getElementById('modalImage');
             
-            // Close if clicking outside the image or exactly on the close button
             if (!event || event.target === modal || event.currentTarget.tagName === 'BUTTON') {
                 modal.classList.add('hidden');
                 modal.classList.remove('flex');
-                
-                // Restore background scrolling
                 document.body.style.overflow = '';
                 
-                // Clear source after slight delay to prevent flicker during close
                 setTimeout(() => {
                     if(modal.classList.contains('hidden')) {
                         modalImg.src = '';
@@ -808,7 +834,6 @@
             }
         }
 
-        // Close on Escape key press
         document.addEventListener('keydown', function(event) {
             if (event.key === 'Escape') {
                 closeModal();
@@ -816,7 +841,6 @@
             }
         });
 
-        // Contact Modal Functions
         function showContact(type) {
             const modal = document.getElementById('contactModal');
             const icon = document.getElementById('contactIcon');
@@ -837,7 +861,6 @@
             modal.classList.add('flex');
             document.body.style.overflow = 'hidden';
             
-            // Animation for modal content
             setTimeout(() => {
                 document.getElementById('contactModalContent').classList.remove('scale-95');
                 document.getElementById('contactModalContent').classList.add('scale-100');
@@ -860,7 +883,6 @@
             }
         }
 
-        // Toggle Details Accordion
         function toggleDetails(id) {
             const details = document.getElementById(id);
             const icon = document.getElementById('icon-' + id);
@@ -883,14 +905,11 @@
 
         function moveSlide(id, dir) {
             const slider = sliders[id];
-            // 방향에 따라 다음 인덱스 계산 (루프되도록 설정)
             slider.current = (slider.current + dir + slider.total) % slider.total;
             
-            // 트랙 이동
             const track = document.getElementById(`track-${id}`);
             track.style.transform = `translateX(-${slider.current * 100}%)`;
             
-            // 하단 점(Indicator) 업데이트
             for(let i=0; i<slider.total; i++) {
                 const dot = document.getElementById(`dot-${id}-${i}`);
                 if(i === slider.current) {
