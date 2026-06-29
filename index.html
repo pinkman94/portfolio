@@ -50,6 +50,7 @@
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased selection:bg-brand-blue selection:text-white relative">
 
+    <!-- 네비게이션 바 -->
     <nav class="fixed w-full z-50 top-0 transition-all duration-300 bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-sm">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
@@ -86,9 +87,9 @@
             
             <!-- Profile Card -->
             <div class="w-full max-w-sm flex flex-col items-center flex-shrink-0 z-10">
-                <!-- 증명사진 비율(3:4)을 고려한 세로형 둥근 사각형 프레임 -->
                 <div class="w-48 aspect-[3/4] rounded-2xl border-4 border-white/10 shadow-2xl overflow-hidden mb-6 relative group bg-slate-800 flex-shrink-0 transition-transform hover:-translate-y-2 duration-300">
-                    <img src="https://i.imgur.com/424bk5k.jpeg" alt="이용상 프로필 사진" class="w-full h-full object-cover object-top relative z-0">
+                    <!-- 수정된 증명사진 -->
+                    <img src="https://i.imgur.com/c5R3V0l.jpeg" alt="이용상 프로필 사진" class="w-full h-full object-cover object-top relative z-0">
                 </div>
                 
                 <div class="text-center mb-6">
@@ -152,7 +153,6 @@
                     </h3>
                     
                     <div class="relative border-l-2 border-slate-200 ml-4 space-y-12">
-                        <!-- 대학원 -->
                         <div class="relative pl-8">
                             <div class="absolute w-5 h-5 bg-brand-blue rounded-full -left-[11px] top-1 shadow-[0_0_0_4px_rgba(37,99,235,0.2)]"></div>
                             <div class="bg-white p-7 rounded-2xl shadow-md border border-slate-100 hover:shadow-lg transition-shadow">
@@ -168,7 +168,6 @@
                             </div>
                         </div>
 
-                        <!-- 전문대학교 -->
                         <div class="relative pl-8">
                             <div class="absolute w-4 h-4 bg-slate-300 rounded-full -left-[9px] top-1 border-2 border-white"></div>
                             <div class="bg-transparent group">
@@ -178,7 +177,6 @@
                             </div>
                         </div>
 
-                        <!-- 고등학교 -->
                         <div class="relative pl-8">
                             <div class="absolute w-4 h-4 bg-slate-300 rounded-full -left-[9px] top-1 border-2 border-white"></div>
                             <div class="bg-transparent group">
@@ -206,7 +204,6 @@
                                 </tr>
                             </thead>
                             <tbody class="divide-y divide-slate-100">
-                                <!-- 건축산업기사 -->
                                 <tr class="hover:bg-slate-50 transition-colors">
                                     <td class="px-5 py-5 whitespace-nowrap">
                                         <div class="flex items-center">
@@ -228,7 +225,6 @@
                                     </td>
                                 </tr>
                                 
-                                <!-- 건설안전기사 -->
                                 <tr class="hover:bg-slate-50 transition-colors">
                                     <td class="px-5 py-5 whitespace-nowrap">
                                         <div class="flex items-center">
@@ -250,7 +246,6 @@
                                     </td>
                                 </tr>
 
-                                <!-- 한국사능력검정시험 -->
                                 <tr class="hover:bg-slate-50 transition-colors">
                                     <td class="px-5 py-5 whitespace-nowrap">
                                         <div class="flex items-center">
@@ -288,7 +283,6 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20">
-                <!-- Competence 1 -->
                 <div class="group">
                     <div class="bg-slate-50 rounded-3xl p-10 border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 h-full flex flex-col">
                         <div class="w-16 h-16 bg-blue-100 text-brand-blue rounded-2xl flex items-center justify-center text-3xl mb-8 group-hover:scale-110 group-hover:bg-brand-blue group-hover:text-white transition-all duration-300 shadow-sm">
@@ -307,7 +301,6 @@
                     </div>
                 </div>
 
-                <!-- Competence 2 -->
                 <div class="group">
                     <div class="bg-brand-navy rounded-3xl p-10 border border-slate-800 shadow-xl hover:shadow-2xl hover:border-brand-blue/50 transition-all duration-300 h-full flex flex-col relative overflow-hidden">
                         <div class="absolute top-0 right-0 w-64 h-64 bg-brand-blue/10 rounded-full blur-3xl -mr-20 -mt-20 pointer-events-none"></div>
@@ -346,9 +339,8 @@
 
             <div class="bg-white rounded-2xl shadow-md border border-slate-200 p-8 md:p-12">
                 
-                <!-- 회사 1: 에이스디엔시 -->
+                <!-- 직장 1 -->
                 <div class="flex flex-col lg:flex-row gap-8 mb-16 relative">
-                    <!-- Left: Company Info -->
                     <div class="w-full lg:w-1/3 flex flex-col">
                         <div class="flex items-center mb-2">
                             <div class="w-3 h-3 rounded-full bg-brand-blue mr-3 shadow-[0_0_0_3px_rgba(37,99,235,0.2)]"></div>
@@ -359,7 +351,6 @@
                         <span class="inline-block ml-6 px-3 py-1 bg-slate-100 text-slate-600 text-xs font-bold rounded-md w-max border border-slate-200 mt-2">정규직</span>
                     </div>
                     
-                    <!-- Right: Role Info -->
                     <div class="w-full lg:w-2/3">
                         <div class="flex flex-wrap gap-3 mb-6">
                             <div class="flex items-center border border-slate-200 rounded-lg overflow-hidden bg-slate-50">
@@ -392,12 +383,10 @@
                     </div>
                 </div>
                 
-                <!-- Divider -->
                 <div class="w-full h-px bg-slate-100 mb-12"></div>
 
-                <!-- 회사 2: 샘코건설 -->
+                <!-- 직장 2 -->
                 <div class="flex flex-col lg:flex-row gap-8 relative">
-                    <!-- Left: Company Info -->
                     <div class="w-full lg:w-1/3 flex flex-col">
                         <div class="flex items-center mb-2">
                             <div class="w-3 h-3 rounded-full bg-slate-300 mr-3 border-2 border-white"></div>
@@ -409,7 +398,6 @@
                         <span class="inline-block ml-6 px-3 py-1 bg-slate-100 text-slate-600 text-xs font-bold rounded-md w-max border border-slate-200 mt-2">정규직</span>
                     </div>
                     
-                    <!-- Right: Role Info -->
                     <div class="w-full lg:w-2/3">
                         <div class="flex flex-wrap gap-3 mb-6">
                             <div class="flex items-center border border-slate-200 rounded-lg overflow-hidden bg-slate-50">
@@ -450,12 +438,11 @@
                 <div class="w-20 h-1.5 bg-brand-blue mx-auto mt-6 rounded-full"></div>
             </div>
 
-            <!-- Timeline Container -->
+            <!-- 타임라인 라인 -->
             <div class="relative max-w-5xl mx-auto">
-                <!-- Vertical Line -->
                 <div class="absolute left-6 md:left-1/2 top-0 bottom-0 w-1 bg-slate-200 -translate-x-1/2 rounded-full"></div>
 
-                <!-- Project Item 1 -->
+                <!-- 1. 보라매역 프리센트 -->
                 <div class="relative flex flex-col md:flex-row items-center justify-between mb-32 group">
                     <div class="absolute left-6 md:left-1/2 w-6 h-6 bg-brand-blue rounded-full -translate-x-1/2 shadow-[0_0_0_6px_rgba(255,255,255,1),0_0_0_10px_rgba(37,99,235,0.2)] z-10"></div>
                     
@@ -463,19 +450,16 @@
                         <div class="bg-white rounded-2xl shadow-lg border border-slate-100 overflow-hidden hover:shadow-2xl transition-all duration-300 transform md:group-hover:-translate-x-2 flex flex-col">
                             <div class="relative w-full h-64 md:h-72 overflow-hidden group/slider bg-slate-100" id="slider-boramae">
                                 <div class="flex transition-transform duration-500 ease-in-out h-full w-full" id="track-boramae">
-                                    <img src="https://i.imgur.com/apd2r5z.jpeg" alt="보라매역 현장 1" class="w-full h-full object-contain cursor-pointer hover:scale-105 transition-transform" onclick="openModal('https://i.imgur.com/apd2r5z.jpeg')" flex-shrink-0">
-                                    <img src="https://i.imgur.com/GEONIBB.jpeg" alt="보라매역 현장 2" class="w-full h-full object-contain cursor-pointer hover:scale-105 transition-transform" onclick="openModal('https://i.imgur.com/GEONIBB.jpeg')" flex-shrink-0">
-                                    <img src="https://i.imgur.com/Q7MxaH7.jpeg" alt="보라매역 현장 3" class="w-full h-full object-contain cursor-pointer hover:scale-105 transition-transform" onclick="openModal('https://i.imgur.com/Q7MxaH7.jpeg')" flex-shrink-0">
+                                    <img src="https://i.imgur.com/apd2r5z.jpeg" class="w-full h-full object-contain flex-shrink-0">
+                                    <img src="https://i.imgur.com/GEONIBB.jpeg" class="w-full h-full object-contain flex-shrink-0">
+                                    <img src="https://i.imgur.com/Q7MxaH7.jpeg" class="w-full h-full object-contain flex-shrink-0">
                                 </div>
-                                <button onclick="moveSlide('boramae', -1)" class="absolute left-3 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center bg-black/40 text-white rounded-full opacity-0 group-hover/slider:opacity-100 hover:bg-brand-blue transition-all z-10"><i class="fas fa-chevron-left text-sm"></i></button>
-                                <button onclick="moveSlide('boramae', 1)" class="absolute right-3 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center bg-black/40 text-white rounded-full opacity-0 group-hover/slider:opacity-100 hover:bg-brand-blue transition-all z-10"><i class="fas fa-chevron-right text-sm"></i></button>
+                                <button onclick="moveSlide('boramae', -1)" class="absolute left-3 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center bg-black/40 text-white rounded-full opacity-70 md:opacity-0 md:group-hover/slider:opacity-100 hover:bg-brand-blue transition-all z-10"><i class="fas fa-chevron-left text-sm"></i></button>
+                                <button onclick="moveSlide('boramae', 1)" class="absolute right-3 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center bg-black/40 text-white rounded-full opacity-70 md:opacity-0 md:group-hover/slider:opacity-100 hover:bg-brand-blue transition-all z-10"><i class="fas fa-chevron-right text-sm"></i></button>
                                 <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2 z-10">
                                     <div class="w-2 h-2 rounded-full bg-slate-800 transition-colors shadow-sm" id="dot-boramae-0"></div>
                                     <div class="w-2 h-2 rounded-full bg-slate-400 transition-colors shadow-sm" id="dot-boramae-1"></div>
                                     <div class="w-2 h-2 rounded-full bg-slate-400 transition-colors shadow-sm" id="dot-boramae-2"></div>
-                                </div>
-                                <div class="absolute top-3 right-3 bg-black/50 text-white px-2 py-1 rounded text-xs pointer-events-none opacity-0 group-hover/slider:opacity-100 transition-opacity z-10">
-                                    <i class="fas fa-search-plus"></i> 클릭하여 확대
                                 </div>
                             </div>
                             <div class="p-7 text-left flex-1 bg-white">
@@ -491,7 +475,7 @@
                                 <div class="mb-4">
                                     <h4 class="font-bold text-slate-800 mb-1.5"><i class="fas fa-info-circle text-brand-blue mr-1"></i> 프로젝트 개요</h4>
                                     <ul class="list-disc list-inside text-slate-600 text-sm space-y-1.5 ml-1 break-keep">
-                                        <li><span class="font-semibold">규모:</span> 연면적 23,765㎡, 지하 4층~지상 20층 (공동주택 124세대, 오피스텔 64세대, 근린생활생시설 지하1층~4층)</li>
+                                        <li><span class="font-semibold">규모:</span> 연면적 23,765㎡, 지하 4층~지상 20층 (공동주택 124세대, 오피스텔 64세대, 근린생활생시설)</li>
                                         <li><span class="font-semibold">공법:</span> RC조, C.I.P, TOP-DOWN, PRD, 커튼월 공법</li>
                                         <li><span class="font-semibold">직책:</span> 건축시공 선임(대리)</li>
                                     </ul>
@@ -506,9 +490,16 @@
                                     <ul class="list-disc list-outside ml-5 text-slate-600 text-[13.5px] leading-relaxed space-y-2 break-keep">
                                         <li><span class="font-bold text-slate-700">고난도 도심지 공사 수행:</span> 협소한 부지 특성을 반영한 양중 및 물류 반입 계획 수립</li>
                                         <li><span class="font-bold text-slate-700">특수공법 시공 관리:</span> PRD 및 TOP-DOWN 공법 적용 구간의 굴착 및 골조 동시 진행에 따른 구조적 안정성 확보 및 리스크 통제</li>
-                                        <li><span class="font-bold text-slate-700">인터페이스 조율:</span> 건축/설비/전기 상세도(Shop) 사전 교차 검토로 타 공종 간 간섭 및 재시공 문제 선제 차단</li>
+                                        <li><span class="font-bold text-slate-700">인터페이스 조율:</span> 건축/설비/전기 상세도 사전 교차 검토로 타 공종 간 간섭 및 재시공 문제 선제 차단</li>
                                         <li><span class="font-bold text-slate-700">공정/품질 관리:</span> 커튼월 외장 공사 및 내부 세대 마감 공정 지휘, 철저한 품질 기준 적용으로 성공적인 공기 준수</li>
                                     </ul>
+                                    <!-- 사진 최적화 갤러리 -->
+                                    <div class="mt-8 pt-6 border-t border-slate-100">
+                                        <h4 class="font-bold text-slate-800 mb-4 flex items-center"><i class="fas fa-images text-brand-blue mr-2"></i> 현장 사진첩 <span class="text-xs font-normal text-slate-400 ml-2">(클릭하여 확대)</span></h4>
+                                        <div class="grid grid-cols-3 sm:grid-cols-4 gap-2" id="gallery-boramae">
+                                            <!-- JS will populate optimized images here -->
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -516,7 +507,7 @@
                     <div class="hidden md:block w-5/12"></div>
                 </div>
 
-                <!-- Project Item 2 -->
+                <!-- 2. 영등포 C-TOWER -->
                 <div class="relative flex flex-col md:flex-row items-center justify-between mb-32 group">
                     <div class="absolute left-6 md:left-1/2 w-5 h-5 bg-slate-300 rounded-full -translate-x-1/2 shadow-[0_0_0_6px_rgba(255,255,255,1)] z-10 group-hover:bg-brand-blue group-hover:w-6 group-hover:h-6 transition-all duration-300"></div>
                     <div class="hidden md:block w-5/12"></div>
@@ -525,19 +516,16 @@
                         <div class="bg-white rounded-2xl shadow-lg border border-slate-100 overflow-hidden hover:shadow-2xl transition-all duration-300 transform md:group-hover:translate-x-2 flex flex-col">
                             <div class="relative w-full h-64 md:h-72 overflow-hidden group/slider bg-slate-100" id="slider-ctower">
                                 <div class="flex transition-transform duration-500 ease-in-out h-full w-full" id="track-ctower">
-                                    <img src="https://i.imgur.com/h4Ig57N.jpeg" alt="C-TOWER 현장 1" class="w-full h-full object-contain cursor-pointer hover:scale-105 transition-transform" onclick="openModal('https://i.imgur.com/h4Ig57N.jpeg')" flex-shrink-0">
-                                    <img src="https://i.imgur.com/J24i99K.jpeg" alt="C-TOWER 현장 2" class="w-full h-full object-contain cursor-pointer hover:scale-105 transition-transform" onclick="openModal('https://i.imgur.com/J24i99K.jpeg')" flex-shrink-0">
-                                    <img src="https://i.imgur.com/7HiOHsh.jpeg" alt="C-TOWER 현장 3" class="w-full h-full object-contain cursor-pointer hover:scale-105 transition-transform" onclick="openModal('https://i.imgur.com/7HiOHsh.jpeg')" flex-shrink-0">
+                                    <img src="https://i.imgur.com/h4Ig57N.jpeg" class="w-full h-full object-contain flex-shrink-0">
+                                    <img src="https://i.imgur.com/J24i99K.jpeg" class="w-full h-full object-contain flex-shrink-0">
+                                    <img src="https://i.imgur.com/7HiOHsh.jpeg" class="w-full h-full object-contain flex-shrink-0">
                                 </div>
-                                <button onclick="moveSlide('ctower', -1)" class="absolute left-3 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center bg-black/40 text-white rounded-full opacity-0 group-hover/slider:opacity-100 hover:bg-brand-blue transition-all z-10"><i class="fas fa-chevron-left text-sm"></i></button>
-                                <button onclick="moveSlide('ctower', 1)" class="absolute right-3 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center bg-black/40 text-white rounded-full opacity-0 group-hover/slider:opacity-100 hover:bg-brand-blue transition-all z-10"><i class="fas fa-chevron-right text-sm"></i></button>
+                                <button onclick="moveSlide('ctower', -1)" class="absolute left-3 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center bg-black/40 text-white rounded-full opacity-70 md:opacity-0 md:group-hover/slider:opacity-100 hover:bg-brand-blue transition-all z-10"><i class="fas fa-chevron-left text-sm"></i></button>
+                                <button onclick="moveSlide('ctower', 1)" class="absolute right-3 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center bg-black/40 text-white rounded-full opacity-70 md:opacity-0 md:group-hover/slider:opacity-100 hover:bg-brand-blue transition-all z-10"><i class="fas fa-chevron-right text-sm"></i></button>
                                 <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2 z-10">
                                     <div class="w-2 h-2 rounded-full bg-slate-800 transition-colors shadow-sm" id="dot-ctower-0"></div>
                                     <div class="w-2 h-2 rounded-full bg-slate-400 transition-colors shadow-sm" id="dot-ctower-1"></div>
                                     <div class="w-2 h-2 rounded-full bg-slate-400 transition-colors shadow-sm" id="dot-ctower-2"></div>
-                                </div>
-                                <div class="absolute top-3 right-3 bg-black/50 text-white px-2 py-1 rounded text-xs pointer-events-none opacity-0 group-hover/slider:opacity-100 transition-opacity z-10">
-                                    <i class="fas fa-search-plus"></i> 클릭하여 확대
                                 </div>
                             </div>
                             <div class="p-7 text-left flex-1 bg-white">
@@ -566,17 +554,22 @@
                                 <div id="details-ctower" class="hidden mt-4 pt-4 border-t border-slate-100 animate-[fadeIn_0.3s_ease-out]">
                                     <h4 class="font-bold text-slate-800 mb-2"><i class="fas fa-trophy text-yellow-500 mr-1"></i> 주요 수행업무 및 성과</h4>
                                     <ul class="list-disc list-outside ml-5 text-slate-600 text-[13.5px] leading-relaxed space-y-2 break-keep">
-                                        <li><span class="font-bold text-slate-700">마감 공 준수:</span> 지상 8층 골조 시점에 투입되어 15층까지의 골조를 완료하고, 커튼월 외장 및 전 층 내부 마감 공사를 지연 없이 성공적으로 주도함</li>
-                                        <li><span class="font-bold text-slate-700">지하 고질적 누수 차단:</span> 하천 인접 및 높은 지하수위로 인한 지하 5층 구간의 심각한 누수 문제를 전담함. 수분 침투 경로를 추적하고 현장 여건에 맞춘 다각적인 지수 대책을 적용해 하자를 차단했으며, 현재 대학원 연구의 강력한 실무적 기반이 됨</li>
+                                        <li><span class="font-bold text-slate-700">마감 공사 완수:</span> 지상 8층 골조 시점에 투입되어 15층까지의 골조를 완료하고, 커튼월 외장 및 전 층 내부 마감 공사를 지연 없이 주도함</li>
+                                        <li><span class="font-bold text-slate-700">지하 고질적 누수 차단:</span> 높은 지하수위로 인한 지하 5층 심각한 누수 문제를 전담. 수분 침투 경로 추적 및 다각적 지수 대책 적용</li>
                                         <li><span class="font-bold text-slate-700">현장/공무 실무:</span> 하도급 기성 정산 및 근로자 안전 통제 병행</li>
                                     </ul>
+                                    <div class="mt-8 pt-6 border-t border-slate-100">
+                                        <h4 class="font-bold text-slate-800 mb-4 flex items-center"><i class="fas fa-images text-brand-blue mr-2"></i> 현장 사진첩 <span class="text-xs font-normal text-slate-400 ml-2">(클릭하여 확대)</span></h4>
+                                        <div class="grid grid-cols-3 sm:grid-cols-4 gap-2" id="gallery-ctower">
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Project Item 3 -->
+                <!-- 3. 병점복합타운 -->
                 <div class="relative flex flex-col md:flex-row items-center justify-between mb-32 group">
                     <div class="absolute left-6 md:left-1/2 w-5 h-5 bg-slate-300 rounded-full -translate-x-1/2 shadow-[0_0_0_6px_rgba(255,255,255,1)] z-10 group-hover:bg-brand-blue group-hover:w-6 group-hover:h-6 transition-all duration-300"></div>
                     
@@ -584,17 +577,14 @@
                         <div class="bg-white rounded-2xl shadow-lg border border-slate-100 overflow-hidden hover:shadow-2xl transition-all duration-300 transform md:group-hover:-translate-x-2 flex flex-col">
                             <div class="relative w-full h-64 md:h-72 overflow-hidden group/slider bg-slate-100" id="slider-byeongjeom">
                                 <div class="flex transition-transform duration-500 ease-in-out h-full w-full" id="track-byeongjeom">
-                                    <img src="https://i.imgur.com/B5hhTmy.png" alt="병점복합타운 현장 1" class="w-full h-full object-contain cursor-pointer hover:scale-105 transition-transform" onclick="openModal('https://i.imgur.com/B5hhTmy.png')" flex-shrink-0">
-                                    <img src="https://i.imgur.com/re1bvfS.jpeg" alt="병점복합타운 현장 2" class="w-full h-full object-contain cursor-pointer hover:scale-105 transition-transform" onclick="openModal('https://i.imgur.com/re1bvfS.jpeg')" flex-shrink-0">
+                                    <img src="https://i.imgur.com/B5hhTmy.png" class="w-full h-full object-contain flex-shrink-0">
+                                    <img src="https://i.imgur.com/re1bvfS.jpeg" class="w-full h-full object-contain flex-shrink-0">
                                 </div>
-                                <button onclick="moveSlide('byeongjeom', -1)" class="absolute left-3 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center bg-black/40 text-white rounded-full opacity-0 group-hover/slider:opacity-100 hover:bg-brand-blue transition-all z-10"><i class="fas fa-chevron-left text-sm"></i></button>
-                                <button onclick="moveSlide('byeongjeom', 1)" class="absolute right-3 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center bg-black/40 text-white rounded-full opacity-0 group-hover/slider:opacity-100 hover:bg-brand-blue transition-all z-10"><i class="fas fa-chevron-right text-sm"></i></button>
+                                <button onclick="moveSlide('byeongjeom', -1)" class="absolute left-3 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center bg-black/40 text-white rounded-full opacity-70 md:opacity-0 md:group-hover/slider:opacity-100 hover:bg-brand-blue transition-all z-10"><i class="fas fa-chevron-left text-sm"></i></button>
+                                <button onclick="moveSlide('byeongjeom', 1)" class="absolute right-3 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center bg-black/40 text-white rounded-full opacity-70 md:opacity-0 md:group-hover/slider:opacity-100 hover:bg-brand-blue transition-all z-10"><i class="fas fa-chevron-right text-sm"></i></button>
                                 <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2 z-10">
                                     <div class="w-2 h-2 rounded-full bg-slate-800 transition-colors shadow-sm" id="dot-byeongjeom-0"></div>
                                     <div class="w-2 h-2 rounded-full bg-slate-400 transition-colors shadow-sm" id="dot-byeongjeom-1"></div>
-                                </div>
-                                <div class="absolute top-3 right-3 bg-black/50 text-white px-2 py-1 rounded text-xs pointer-events-none opacity-0 group-hover/slider:opacity-100 transition-opacity z-10">
-                                    <i class="fas fa-search-plus"></i> 클릭하여 확대
                                 </div>
                             </div>
                             <div class="p-7 text-left flex-1 bg-white">
@@ -633,7 +623,7 @@
                     <div class="hidden md:block w-5/12"></div>
                 </div>
 
-                <!-- Project Item 4 -->
+                <!-- 4. 삼성동 친우빌딩 -->
                 <div class="relative flex flex-col md:flex-row items-center justify-between group">
                     <div class="absolute left-6 md:left-1/2 w-5 h-5 bg-slate-300 rounded-full -translate-x-1/2 shadow-[0_0_0_6px_rgba(255,255,255,1)] z-10 group-hover:bg-brand-blue group-hover:w-6 group-hover:h-6 transition-all duration-300"></div>
                     <div class="hidden md:block w-5/12"></div>
@@ -642,17 +632,14 @@
                         <div class="bg-white rounded-2xl shadow-lg border border-slate-100 overflow-hidden hover:shadow-2xl transition-all duration-300 transform md:group-hover:translate-x-2 flex flex-col">
                             <div class="relative w-full h-64 md:h-72 overflow-hidden group/slider bg-slate-100" id="slider-samseong">
                                 <div class="flex transition-transform duration-500 ease-in-out h-full w-full" id="track-samseong">
-                                    <img src="https://i.imgur.com/1dm4nMB.jpeg" alt="삼성동 친우빌딩 현장 1" class="w-full h-full object-contain cursor-pointer hover:scale-105 transition-transform" onclick="openModal('https://i.imgur.com/1dm4nMB.jpeg')" flex-shrink-0">
-                                    <img src="https://i.imgur.com/CnueDtt.jpeg" alt="삼성동 친우빌딩 현장 2" class="w-full h-full object-contain cursor-pointer hover:scale-105 transition-transform" onclick="openModal('https://i.imgur.com/CnueDtt.jpeg')" flex-shrink-0">
+                                    <img src="https://i.imgur.com/1dm4nMB.jpeg" class="w-full h-full object-contain flex-shrink-0">
+                                    <img src="https://i.imgur.com/CnueDtt.jpeg" class="w-full h-full object-contain flex-shrink-0">
                                 </div>
-                                <button onclick="moveSlide('samseong', -1)" class="absolute left-3 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center bg-black/40 text-white rounded-full opacity-0 group-hover/slider:opacity-100 hover:bg-brand-blue transition-all z-10"><i class="fas fa-chevron-left text-sm"></i></button>
-                                <button onclick="moveSlide('samseong', 1)" class="absolute right-3 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center bg-black/40 text-white rounded-full opacity-0 group-hover/slider:opacity-100 hover:bg-brand-blue transition-all z-10"><i class="fas fa-chevron-right text-sm"></i></button>
+                                <button onclick="moveSlide('samseong', -1)" class="absolute left-3 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center bg-black/40 text-white rounded-full opacity-70 md:opacity-0 md:group-hover/slider:opacity-100 hover:bg-brand-blue transition-all z-10"><i class="fas fa-chevron-left text-sm"></i></button>
+                                <button onclick="moveSlide('samseong', 1)" class="absolute right-3 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center bg-black/40 text-white rounded-full opacity-70 md:opacity-0 md:group-hover/slider:opacity-100 hover:bg-brand-blue transition-all z-10"><i class="fas fa-chevron-right text-sm"></i></button>
                                 <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2 z-10">
                                     <div class="w-2 h-2 rounded-full bg-slate-800 transition-colors shadow-sm" id="dot-samseong-0"></div>
                                     <div class="w-2 h-2 rounded-full bg-slate-400 transition-colors shadow-sm" id="dot-samseong-1"></div>
-                                </div>
-                                <div class="absolute top-3 right-3 bg-black/50 text-white px-2 py-1 rounded text-xs pointer-events-none opacity-0 group-hover/slider:opacity-100 transition-opacity z-10">
-                                    <i class="fas fa-search-plus"></i> 클릭하여 확대
                                 </div>
                             </div>
                             <div class="p-7 text-left flex-1 bg-white">
@@ -681,9 +668,14 @@
                                 <div id="details-samseong" class="hidden mt-4 pt-4 border-t border-slate-100 animate-[fadeIn_0.3s_ease-out]">
                                     <h4 class="font-bold text-slate-800 mb-2"><i class="fas fa-trophy text-yellow-500 mr-1"></i> 주요 수행업무 및 성과</h4>
                                     <ul class="list-disc list-outside ml-5 text-slate-600 text-[13.5px] leading-relaxed space-y-2 break-keep">
-                                        <li><span class="font-bold text-slate-700">전 분야 실무:</span> 현장소장과 단 2인 체제로 착공부터 투입됨. 시공 공정 관리는 물론 품질 검측, 안전 통제, 현장 공무(하도급 정산 등)까지 전천후로 밀착 수행하며 현장 운영의 확고한 뼈대를 다짐</li>
-                                        <li><span class="font-bold text-slate-700">도심지 대관/대민 민원 리스크 통제:</span> 선릉역 인근 초밀집 상권 특성상 지속해서 발생하는 소음 및 교통 대관·대민 민원을 전담하여 선제 조율함. 극히 협소한 부지 내 장비 세팅 및 자재 반입 동선을 치밀하게 기획하여 민원 마찰 없이 성공적으로 준공을 완수함</li>
+                                        <li><span class="font-bold text-slate-700">전 분야 실무:</span> 현장소장과 단 2인 체제로 착공부터 투입됨. 시공 공정 관리는 물론 품질 검측, 안전 통제, 현장 공무(하도급 정산 등)까지 밀착 수행</li>
+                                        <li><span class="font-bold text-slate-700">도심지 대관/대민 민원 리스크 통제:</span> 선릉역 인근 초밀집 상권 특성상 지속해서 발생하는 소음 및 교통 대관·대민 민원을 전담하여 선제 조율함</li>
                                     </ul>
+                                    <div class="mt-8 pt-6 border-t border-slate-100">
+                                        <h4 class="font-bold text-slate-800 mb-4 flex items-center"><i class="fas fa-images text-brand-blue mr-2"></i> 현장 사진첩 <span class="text-xs font-normal text-slate-400 ml-2">(클릭하여 확대)</span></h4>
+                                        <div class="grid grid-cols-3 sm:grid-cols-4 gap-2" id="gallery-samseong">
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -700,48 +692,59 @@
                 <span class="text-brand-blue font-bold tracking-wider uppercase text-sm">Research & Analysis</span>
                 <h2 class="text-4xl font-bold text-brand-navy mt-2">건축물 분석</h2>
                 <div class="w-20 h-1.5 bg-brand-blue mx-auto mt-6 rounded-full"></div>
-                <p class="mt-6 text-lg text-slate-600 max-w-2xl mx-auto break-keep">
+                <p class="mt-6 text-lg text-slate-600 max-w-5xl mx-auto break-keep lg:whitespace-nowrap">
                     공학적 시각을 바탕으로 초고층 건축물의 구조적 특징과 붕괴 사례의 근본 원인을 심층 분석한 학술 영상입니다.
                 </p>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
                 <!-- Video 1 -->
-                <div class="bg-white p-7 rounded-3xl border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 group">
+                <div class="bg-white p-7 rounded-3xl border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300">
                     <h3 class="text-xl font-extrabold text-slate-800 mb-5 flex items-center break-keep">
-                        <i class="fab fa-youtube text-red-500 mr-3 text-2xl group-hover:scale-110 transition-transform"></i> 
+                        <i class="fab fa-youtube text-red-500 mr-3 text-2xl"></i> 
                         건축물 분석 (아베노하루카스의 구조설계)
                     </h3>
-                    <div class="relative w-full aspect-video rounded-2xl overflow-hidden shadow-inner bg-slate-100">
-                        <!-- Error 153 방지를 위해 youtube-nocookie.com 및 strict-origin-when-cross-origin 적용 -->
-                        <iframe 
-                            class="absolute top-0 left-0 w-full h-full" 
-                            src="https://www.youtube-nocookie.com/embed/zmhJBOolRm0?rel=0" 
-                            title="아베노 하루카스 구조설계 분석" 
-                            frameborder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                            referrerpolicy="strict-origin-when-cross-origin"
-                            allowfullscreen>
+                    <div class="relative w-full aspect-video rounded-2xl overflow-hidden shadow-inner bg-slate-100 mb-4">
+                        <!-- 에러 153 방지: 원본 공유 코드 속성(si 파라미터, web-share 등) 100% 적용 -->
+                        <iframe class="absolute top-0 left-0 w-full h-full" 
+                                src="https://www.youtube.com/embed/zmhJBOolRm0?si=5fgUbDFVHhYb6lTm" 
+                                title="아베노 하루카스 구조설계 분석" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                referrerpolicy="strict-origin-when-cross-origin"
+                                allowfullscreen>
                         </iframe>
+                    </div>
+                    <!-- 우회(Fallback) UI -->
+                    <div class="text-right">
+                        <a href="https://www.youtube.com/watch?v=zmhJBOolRm0" target="_blank" class="inline-flex items-center text-sm font-semibold text-slate-500 hover:text-brand-blue transition-colors">
+                            <i class="fas fa-external-link-alt mr-1.5"></i> 영상 재생 불가 시 유튜브에서 보기
+                        </a>
                     </div>
                 </div>
 
                 <!-- Video 2 -->
-                <div class="bg-white p-7 rounded-3xl border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 group">
+                <div class="bg-white p-7 rounded-3xl border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300">
                     <h3 class="text-xl font-extrabold text-slate-800 mb-5 flex items-center break-keep">
-                        <i class="fab fa-youtube text-red-500 mr-3 text-2xl group-hover:scale-110 transition-transform"></i> 
+                        <i class="fab fa-youtube text-red-500 mr-3 text-2xl"></i> 
                         건축물 분석 (챔플레인타워사우스의 붕괴)
                     </h3>
-                    <div class="relative w-full aspect-video rounded-2xl overflow-hidden shadow-inner bg-slate-100">
-                        <iframe 
-                            class="absolute top-0 left-0 w-full h-full" 
-                            src="https://www.youtube-nocookie.com/embed/iL5MmXHB5NA?rel=0" 
-                            title="챔플레인타워사우스의 붕괴 분석" 
-                            frameborder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                            referrerpolicy="strict-origin-when-cross-origin"
-                            allowfullscreen>
+                    <div class="relative w-full aspect-video rounded-2xl overflow-hidden shadow-inner bg-slate-100 mb-4">
+                        <!-- 에러 153 방지: 원본 공유 코드 속성(si 파라미터, web-share 등) 100% 적용 -->
+                        <iframe class="absolute top-0 left-0 w-full h-full" 
+                                src="https://www.youtube.com/embed/iL5MmXHB5NA?si=NxaJAslLlDV4_o-N" 
+                                title="챔플레인타워사우스의 붕괴 분석" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                referrerpolicy="strict-origin-when-cross-origin"
+                                allowfullscreen>
                         </iframe>
+                    </div>
+                    <!-- 우회(Fallback) UI -->
+                    <div class="text-right">
+                        <a href="https://www.youtube.com/watch?v=iL5MmXHB5NA" target="_blank" class="inline-flex items-center text-sm font-semibold text-slate-500 hover:text-brand-blue transition-colors">
+                            <i class="fas fa-external-link-alt mr-1.5"></i> 영상 재생 불가 시 유튜브에서 보기
+                        </a>
                     </div>
                 </div>
             </div>
@@ -751,14 +754,12 @@
     <footer id="contact" class="bg-brand-navy border-t border-slate-800 pt-20 pb-12">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row justify-between items-center gap-10">
-                
                 <div class="text-center md:text-left">
                     <h2 class="text-3xl font-bold text-white mb-3">
                         <span class="text-brand-blue">Con-Tech</span> Engineer
                     </h2>
                     <p class="text-slate-400 text-lg">현장을 장악하는 실행력, 데이터로 혁신하는 미래.</p>
                 </div>
-
                 <div class="flex gap-6">
                     <button onclick="showContact('email')" class="w-14 h-14 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-300 hover:bg-brand-blue hover:text-white hover:border-brand-blue transition-all duration-300 shadow-lg group focus:outline-none" title="이메일 확인">
                         <i class="fas fa-envelope text-xl group-hover:scale-110 transition-transform"></i>
@@ -766,31 +767,37 @@
                     <button onclick="showContact('phone')" class="w-14 h-14 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-300 hover:bg-brand-blue hover:text-white hover:border-brand-blue transition-all duration-300 shadow-lg group focus:outline-none" title="연락처 확인">
                         <i class="fas fa-phone text-xl group-hover:scale-110 transition-transform"></i>
                     </button>
-                    <a href="https://github.com/yourusername" target="_blank" class="w-14 h-14 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-300 hover:bg-white hover:text-black hover:border-white transition-all duration-300 shadow-lg group" title="GitHub (플랫폼 소스코드)">
+                    <a href="https://github.com/yourusername" target="_blank" class="w-14 h-14 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-300 hover:bg-white hover:text-black hover:border-white transition-all duration-300 shadow-lg group" title="GitHub">
                         <i class="fab fa-github text-2xl group-hover:scale-110 transition-transform"></i>
                     </a>
                 </div>
             </div>
-            
             <div class="mt-16 pt-8 border-t border-slate-800 text-center text-slate-500 text-sm">
                 <p>&copy; 2024 LEE YONG SANG. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Image Viewer Modal -->
-    <div id="imageModal" class="fixed inset-0 z-[100] hidden flex-col items-center justify-center bg-black/90 backdrop-blur-sm p-4 modal-animate" onclick="closeModal(event)">
-        <div class="absolute top-0 left-0 w-full flex justify-end p-6 pointer-events-none">
-            <button onclick="closeModal(event)" class="pointer-events-auto text-white/70 hover:text-white bg-slate-800/50 hover:bg-slate-700 p-3 rounded-full backdrop-blur-md transition-colors focus:outline-none">
-                <i class="fas fa-times text-2xl"></i>
+    <div id="imageModal" class="fixed inset-0 z-[100] hidden flex-col items-center justify-center bg-black/95 backdrop-blur-md p-4 modal-animate" onclick="closeModal(event)">
+        <!-- 닫기 버튼 -->
+        <div class="absolute top-0 left-0 w-full flex justify-end p-6 pointer-events-none z-50">
+            <button id="closeBtn" onclick="closeModal(event)" class="pointer-events-auto text-white/70 hover:text-white bg-slate-800/50 hover:bg-slate-700 p-3 rounded-full backdrop-blur-md transition-colors focus:outline-none">
+                <i class="fas fa-times text-2xl pointer-events-none"></i>
             </button>
         </div>
-        <div class="relative max-w-full max-h-full flex items-center justify-center overflow-hidden rounded-lg shadow-2xl">
-            <img id="modalImage" src="" alt="확대 이미지" onerror="this.onerror=null; this.src='https://via.placeholder.com/800x1130/1e293b/ffffff?text=서버에+이미지+업로드+시+정상+출력됩니다'" class="max-w-[95vw] max-h-[90vh] object-contain rounded select-none shadow-[0_0_30px_rgba(0,0,0,0.5)]">
+        
+        <!-- 좌우 넘기기 버튼 -->
+        <button id="prevBtn" onclick="navigateGallery(-1, event)" class="absolute left-2 sm:left-10 top-1/2 -translate-y-1/2 text-white/50 hover:text-white text-4xl sm:text-5xl w-12 sm:w-16 h-12 sm:h-16 flex items-center justify-center z-50 transition-all drop-shadow-2xl hidden hover:scale-110"><i class="fas fa-chevron-left pointer-events-none"></i></button>
+        <button id="nextBtn" onclick="navigateGallery(1, event)" class="absolute right-2 sm:right-10 top-1/2 -translate-y-1/2 text-white/50 hover:text-white text-4xl sm:text-5xl w-12 sm:w-16 h-12 sm:h-16 flex items-center justify-center z-50 transition-all drop-shadow-2xl hidden hover:scale-110"><i class="fas fa-chevron-right pointer-events-none"></i></button>
+
+        <!-- 이미지 박스 -->
+        <div class="relative max-w-full max-h-full flex flex-col items-center justify-center overflow-hidden rounded-lg z-40" onclick="event.stopPropagation()">
+            <img id="modalImage" src="" alt="확대 이미지" class="max-w-[95vw] max-h-[85vh] object-contain rounded select-none shadow-[0_0_30px_rgba(0,0,0,0.5)]">
+            <div id="galleryCounter" class="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/60 text-white px-5 py-1.5 rounded-full font-bold tracking-widest text-sm hidden backdrop-blur-md border border-white/10 z-50 pointer-events-none"></div>
         </div>
     </div>
 
-    <!-- Contact Info Modal -->
+    <!-- 연락처 모달 -->
     <div id="contactModal" class="fixed inset-0 z-[110] hidden flex-col items-center justify-center bg-black/70 backdrop-blur-sm p-4 modal-animate" onclick="closeContactModal(event)">
         <div class="bg-white rounded-2xl shadow-2xl max-w-sm w-full p-8 text-center transform scale-95 transition-transform duration-300" id="contactModalContent">
             <div class="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-4 text-brand-blue shadow-inner" id="contactIcon">
@@ -807,39 +814,160 @@
     </div>
 
     <script>
+        // ----------------------------------------
+        // 1. 최적화된 사진 앨범 데이터 및 렌더링
+        // ----------------------------------------
+        const galleries = {
+            boramae: ['Ud8yPCW', 'qQYscuQ', 'N2bRORE', 'ybR49uD', 'UTyr5sB', 'THhiDdf', 'vdU16sY', 'Yy8JF78', 'Gg8JodQ', 'Xa4YJxI', 'JDqiWCP', 'dcgOVEn', 'C2C2feC', 'sUhF5b2', 'hl8mDP8', 'IEVKTI5', 'uu2oOut', '3WUmKr2', '83vMgat', 'b5CgijM', '6nhBgUe', 'e9l4lLj', 'GGtX65r', 'HSlrYxv', '5qgkYxF'],
+            ctower: ['W51zOdv', 'Lt4wSzA', 'LBE2gGu', '8fVtl9n', 's9OLIAl', 'KuBGam7', 'PdmfiSW', 'qRTBqiV', 'L1Wraw1', 'HeTUWFS', '6MIpnTb', '5VGL5xh', 'WhOZeFt', 'GJijsD8', 'JM34gQf', '0a6LtV9', '4Ls9ztR', 'fpnr7tO', 'JCcSiKk', 'cJCecLZ', 'tQSvvtC', '8c0FhRu', 'dnrTGIQ'],
+            samseong: ['GWsvZdn', 'Zy68F2u', 'BE9zAmQ', 'SY4TaOi', 'YFZtUJr', 'H591MRe', 'Esu2D7A', 'cseYSlt', 'jpbX0Fi', '48Gqpv0', 'YNlzN8s', 'BzIURmd', 'V3EGcHC', 'MojRO8I', 'ZoUSIMj', 'IFyBRD5', '3p4CP53', 'HZxajWr', 'OhXG3cK', 'ghPdUiY', 'mEIRC5Y', '3T45wFS']
+        };
+
+        // DOM이 로드되면 갤러리 HTML을 자동으로 생성 (썸네일 사용으로 렉 완벽 해결)
+        window.addEventListener('DOMContentLoaded', () => {
+            Object.keys(galleries).forEach(siteId => {
+                const container = document.getElementById(`gallery-${siteId}`);
+                if (!container) return;
+                
+                let html = '';
+                galleries[siteId].forEach((imgId, index) => {
+                    // "l.jpeg" -> Imgur의 최적화된 썸네일(Large) 주소 적용 (속도 혁신)
+                    const thumbnailUrl = `https://i.imgur.com/${imgId}l.jpeg`;
+                    
+                    html += `
+                        <div class="relative aspect-square overflow-hidden rounded-xl bg-slate-100 border border-slate-200 group cursor-pointer" onclick="openGallery('${siteId}', ${index})">
+                            <img src="${thumbnailUrl}" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" alt="현장 사진">
+                            <div class="absolute inset-0 bg-brand-blue/0 group-hover:bg-brand-blue/20 transition-colors duration-300 flex items-center justify-center">
+                                <i class="fas fa-search-plus text-white opacity-0 group-hover:opacity-100 text-2xl"></i>
+                            </div>
+                        </div>
+                    `;
+                });
+                container.innerHTML = html;
+            });
+        });
+
+        // ----------------------------------------
+        // 2. 모달(팝업) 및 갤러리 슬라이드 제어
+        // ----------------------------------------
+        let currentGallery = null;
+        let currentIndex = 0;
+
         function openModal(imageSrc) {
-            const modal = document.getElementById('imageModal');
-            const modalImg = document.getElementById('modalImage');
+            currentGallery = null; // 단일 이미지용
+            document.getElementById('modalImage').src = imageSrc;
             
-            modalImg.src = imageSrc;
+            document.getElementById('prevBtn').classList.add('hidden');
+            document.getElementById('nextBtn').classList.add('hidden');
+            document.getElementById('galleryCounter').classList.add('hidden');
+
+            const modal = document.getElementById('imageModal');
             modal.classList.remove('hidden');
             modal.classList.add('flex');
             document.body.style.overflow = 'hidden';
         }
 
+        function openGallery(siteId, index) {
+            currentGallery = galleries[siteId];
+            currentIndex = index;
+            // 팝업에서는 원본(.jpeg) 고화질 이미지 로드
+            document.getElementById('modalImage').src = `https://i.imgur.com/${currentGallery[currentIndex]}.jpeg`;
+            
+            document.getElementById('prevBtn').classList.remove('hidden');
+            document.getElementById('nextBtn').classList.remove('hidden');
+            document.getElementById('galleryCounter').classList.remove('hidden');
+            updateCounter();
+
+            const modal = document.getElementById('imageModal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function navigateGallery(dir, event) {
+            if (event) event.stopPropagation();
+            if (!currentGallery) return;
+            
+            currentIndex = (currentIndex + dir + currentGallery.length) % currentGallery.length;
+            document.getElementById('modalImage').src = `https://i.imgur.com/${currentGallery[currentIndex]}.jpeg`;
+            updateCounter();
+        }
+
+        function updateCounter() {
+            document.getElementById('galleryCounter').innerText = `${currentIndex + 1} / ${currentGallery.length}`;
+        }
+
         function closeModal(event) {
             const modal = document.getElementById('imageModal');
-            const modalImg = document.getElementById('modalImage');
+            const closeBtn = document.getElementById('closeBtn');
             
-            if (!event || event.target === modal || event.currentTarget.tagName === 'BUTTON') {
+            if (!event || event.target === modal || (event.currentTarget && event.currentTarget === closeBtn)) {
                 modal.classList.add('hidden');
                 modal.classList.remove('flex');
                 document.body.style.overflow = '';
                 
                 setTimeout(() => {
                     if(modal.classList.contains('hidden')) {
-                        modalImg.src = '';
+                        document.getElementById('modalImage').src = '';
                     }
                 }, 200);
             }
         }
 
+        // 키보드 컨트롤 (Esc 닫기, 좌우 방향키로 사진첩 넘기기)
         document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') {
-                closeModal();
+            const imageModal = document.getElementById('imageModal');
+            if (!imageModal.classList.contains('hidden')) {
+                if (event.key === 'Escape') closeModal();
+                if (event.key === 'ArrowLeft') navigateGallery(-1);
+                if (event.key === 'ArrowRight') navigateGallery(1);
+            }
+            if (event.key === 'Escape' && !document.getElementById('contactModal').classList.contains('hidden')) {
                 closeContactModal();
             }
         });
+
+        // ----------------------------------------
+        // 3. 기타 UI 상호작용 (아코디언, 연락처 등)
+        // ----------------------------------------
+        function toggleDetails(id) {
+            const details = document.getElementById(id);
+            const icon = document.getElementById('icon-' + id);
+            
+            if (details.classList.contains('hidden')) {
+                details.classList.remove('hidden');
+                icon.classList.add('rotate-180');
+            } else {
+                details.classList.add('hidden');
+                icon.classList.remove('rotate-180');
+            }
+        }
+
+        const sliders = {
+            'boramae': { current: 0, total: 3 },
+            'ctower': { current: 0, total: 3 },
+            'byeongjeom': { current: 0, total: 2 },
+            'samseong': { current: 0, total: 2 }
+        };
+
+        function moveSlide(id, dir) {
+            const slider = sliders[id];
+            slider.current = (slider.current + dir + slider.total) % slider.total;
+            
+            const track = document.getElementById(`track-${id}`);
+            track.style.transform = `translateX(-${slider.current * 100}%)`;
+            
+            for(let i=0; i<slider.total; i++) {
+                const dot = document.getElementById(`dot-${id}-${i}`);
+                if(i === slider.current) {
+                    dot.classList.remove('bg-slate-400');
+                    dot.classList.add('bg-slate-800');
+                } else {
+                    dot.classList.remove('bg-slate-800');
+                    dot.classList.add('bg-slate-400');
+                }
+            }
+        }
 
         function showContact(type) {
             const modal = document.getElementById('contactModal');
@@ -880,45 +1008,6 @@
                     modal.classList.remove('flex');
                     document.body.style.overflow = '';
                 }, 200);
-            }
-        }
-
-        function toggleDetails(id) {
-            const details = document.getElementById(id);
-            const icon = document.getElementById('icon-' + id);
-            
-            if (details.classList.contains('hidden')) {
-                details.classList.remove('hidden');
-                icon.classList.add('rotate-180');
-            } else {
-                details.classList.add('hidden');
-                icon.classList.remove('rotate-180');
-            }
-        }
-
-        const sliders = {
-            'boramae': { current: 0, total: 3 },
-            'ctower': { current: 0, total: 3 },
-            'byeongjeom': { current: 0, total: 2 },
-            'samseong': { current: 0, total: 2 }
-        };
-
-        function moveSlide(id, dir) {
-            const slider = sliders[id];
-            slider.current = (slider.current + dir + slider.total) % slider.total;
-            
-            const track = document.getElementById(`track-${id}`);
-            track.style.transform = `translateX(-${slider.current * 100}%)`;
-            
-            for(let i=0; i<slider.total; i++) {
-                const dot = document.getElementById(`dot-${id}-${i}`);
-                if(i === slider.current) {
-                    dot.classList.remove('bg-slate-400');
-                    dot.classList.add('bg-slate-800');
-                } else {
-                    dot.classList.remove('bg-slate-800');
-                    dot.classList.add('bg-slate-400');
-                }
             }
         }
     </script>
