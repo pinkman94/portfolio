@@ -88,7 +88,6 @@
             <!-- Profile Card -->
             <div class="w-full max-w-sm flex flex-col items-center flex-shrink-0 z-10">
                 <div class="w-48 aspect-[3/4] rounded-2xl border-4 border-white/10 shadow-2xl overflow-hidden mb-6 relative group bg-slate-800 flex-shrink-0 transition-transform hover:-translate-y-2 duration-300">
-                    <!-- 수정된 증명사진 -->
                     <img src="https://i.imgur.com/c5R3V0l.jpeg" alt="이용상 프로필 사진" class="w-full h-full object-cover object-top relative z-0">
                 </div>
                 
@@ -121,12 +120,16 @@
                 <span class="inline-block py-1.5 px-4 rounded-full bg-brand-blue/10 text-brand-blue border border-brand-blue/20 font-semibold text-sm mb-6 tracking-wider shadow-[0_0_15px_rgba(37,99,235,0.2)] uppercase">
                     Architectural & Con-Tech Engineer
                 </span>
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6 break-keep">
-                    현장을 장악하는 <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-brand-blue">실행력</span>,<br/>
-                    데이터로 혁신하는 <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-blue to-cyan-400">콘테크 엔지니어</span>
+                <h1 class="text-4xl md:text-5xl lg:text-[3.2rem] font-extrabold text-white leading-tight mb-6 break-keep">
+                    보이지 않는 <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-brand-blue">디테일</span>로<br/>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-blue to-cyan-400">영속(永續)의 가치</span>를 짓는 건축 엔지니어
                 </h1>
                 <p class="mt-4 text-lg md:text-xl text-slate-300 max-w-2xl leading-relaxed break-keep">
-                    시공, 공무, 대관 업무를 아우르는 7년 차 건축 엔지니어입니다.<br/><br/>고난도 도심지 현장에서 증명한 탄탄한 문제 해결 능력과 자체 개발한 스마트 현장 관리 플랫폼을 바탕으로, 건설 현장의 진정한 디지털 전환(DX)과 무결점 품질을 실현합니다.
+                    오늘의 한계를 넘어, 지속 가능한 건축의 미래를 짓겠습니다.<br/>
+                    건축의 진정한 가치는 눈에 보이지 않는 디테일에서 완성됩니다.<br/><br/>
+                    복잡한 도심지 굴착 공사를 오차 없이 조율해 낸 실행력에,<br/>
+                    건축물의 수명을 연장하는 깊이 있는 공학적 혜안을 더해<br/>
+                    안전하고 가치 있는 공간을 창조해 나가겠습니다.
                 </p>
                 <div class="mt-12 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                     <a href="#projects" class="px-8 py-4 bg-brand-blue text-white rounded-xl font-bold shadow-lg shadow-blue-500/30 hover:bg-blue-700 hover:-translate-y-1 transition-all duration-300 text-lg">
@@ -293,10 +296,16 @@
                             대학원에서 진행 중인 누수 방지 및 LCC(생애주기비용) 최적화 연구입니다. 미세 균열 발생 시 콘크리트 스스로 결함을 메워, 하이엔드 주거 및 데이터센터와 같은 특수 목적 건축물의 <strong>절대적 방수 품질</strong>을 확보하는 선도적인 기술을 연구하고 있습니다.
                         </p>
                         <div class="mt-8 pt-6 border-t border-slate-200">
-                            <ul class="space-y-3 text-slate-600">
+                            <ul class="space-y-3 text-slate-600 mb-6">
                                 <li class="flex items-center"><i class="fas fa-check-circle text-brand-blue mr-3"></i> 구조적 내구성 및 방수 성능 극대화</li>
                                 <li class="flex items-center"><i class="fas fa-check-circle text-brand-blue mr-3"></i> 건축물 유지보수 비용(LCC) 절감</li>
                             </ul>
+                            
+                            <div class="flex items-center gap-4">
+                                <button onclick="openGallery('research', 0)" class="inline-flex items-center px-4 py-2 bg-slate-800 text-white text-sm font-bold rounded-lg hover:bg-brand-blue transition-colors shadow-sm">
+                                    <i class="fas fa-file-signature mr-2"></i> 연구계획서 보기
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -493,11 +502,9 @@
                                         <li><span class="font-bold text-slate-700">인터페이스 조율:</span> 건축/설비/전기 상세도 사전 교차 검토로 타 공종 간 간섭 및 재시공 문제 선제 차단</li>
                                         <li><span class="font-bold text-slate-700">공정/품질 관리:</span> 커튼월 외장 공사 및 내부 세대 마감 공정 지휘, 철저한 품질 기준 적용으로 성공적인 공기 준수</li>
                                     </ul>
-                                    <!-- 사진 최적화 갤러리 -->
                                     <div class="mt-8 pt-6 border-t border-slate-100">
                                         <h4 class="font-bold text-slate-800 mb-4 flex items-center"><i class="fas fa-images text-brand-blue mr-2"></i> 현장 사진첩 <span class="text-xs font-normal text-slate-400 ml-2">(클릭하여 확대)</span></h4>
                                         <div class="grid grid-cols-3 sm:grid-cols-4 gap-2" id="gallery-boramae">
-                                            <!-- JS will populate optimized images here -->
                                         </div>
                                     </div>
                                 </div>
@@ -616,14 +623,18 @@
                                         <li><span class="font-bold text-slate-700">시공 및 공정 관리:</span> 상업건축물 전 과정 시공 관리, 현장 스케줄링 및 협력사 물량 검수 전담</li>
                                         <li><span class="font-bold text-slate-700">동절기 균열 대응 및 구조보강 주도:</span> 지하층 동절기 타설 구간에서 초기 동해 및 수화열로 인한 구조적 균열 징후를 선제적으로 포착함. 정밀 추적조사를 통해 잠재적 구조 결함을 규명하고 구조보강 공사를 주도함. 균열부 응력 분산을 위한 탄소섬유 보강과 전단력 강화를 위한 철골(H-BEAM) 보강 구조물 설치를 병행 전개하여 건물의 구조적 안정성을 완벽히 확보함</li>
                                     </ul>
+                                    <div class="mt-8 pt-6 border-t border-slate-100">
+                                        <h4 class="font-bold text-slate-800 mb-4 flex items-center"><i class="fas fa-images text-brand-blue mr-2"></i> 현장 사진첩 <span class="text-xs font-normal text-slate-400 ml-2">(클릭하여 확대)</span></h4>
+                                        <div class="grid grid-cols-3 sm:grid-cols-4 gap-2" id="gallery-byeongjeom">
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="hidden md:block w-5/12"></div>
                 </div>
 
-                <!-- 4. 삼성동 친우빌딩 -->
+                <!-- 4. 삼성동 친우빌딩 신축공사 -->
                 <div class="relative flex flex-col md:flex-row items-center justify-between group">
                     <div class="absolute left-6 md:left-1/2 w-5 h-5 bg-slate-300 rounded-full -translate-x-1/2 shadow-[0_0_0_6px_rgba(255,255,255,1)] z-10 group-hover:bg-brand-blue group-hover:w-6 group-hover:h-6 transition-all duration-300"></div>
                     <div class="hidden md:block w-5/12"></div>
@@ -668,8 +679,8 @@
                                 <div id="details-samseong" class="hidden mt-4 pt-4 border-t border-slate-100 animate-[fadeIn_0.3s_ease-out]">
                                     <h4 class="font-bold text-slate-800 mb-2"><i class="fas fa-trophy text-yellow-500 mr-1"></i> 주요 수행업무 및 성과</h4>
                                     <ul class="list-disc list-outside ml-5 text-slate-600 text-[13.5px] leading-relaxed space-y-2 break-keep">
-                                        <li><span class="font-bold text-slate-700">전 분야 실무:</span> 현장소장과 단 2인 체제로 착공부터 투입됨. 시공 공정 관리는 물론 품질 검측, 안전 통제, 현장 공무(하도급 정산 등)까지 밀착 수행</li>
-                                        <li><span class="font-bold text-slate-700">도심지 대관/대민 민원 리스크 통제:</span> 선릉역 인근 초밀집 상권 특성상 지속해서 발생하는 소음 및 교통 대관·대민 민원을 전담하여 선제 조율함</li>
+                                        <li><span class="font-bold text-slate-700">전 분야 실무:</span> 현장소장과 단 2인 체제로 착공부터 투입됨. 시공 공정 관리는 물론 품질 검측, 안전 통제, 현장 공무(하도급 정산 등)까지 전천후로 밀착 수행하며 현장 운영의 확고한 뼈대를 다짐</li>
+                                        <li><span class="font-bold text-slate-700">도심지 대관/대민 민원 리스크 통제:</span> 선릉역 인근 초밀집 상권 특성상 지속해서 발생하는 소음 및 교통 대관·대민 민원을 전담하여 선제 조율함. 극히 협소한 부지 내 장비 세팅 및 자재 반입 동선을 치밀하게 기획하여 민원 마찰 없이 성공적으로 준공을 완수함</li>
                                     </ul>
                                     <div class="mt-8 pt-6 border-t border-slate-100">
                                         <h4 class="font-bold text-slate-800 mb-4 flex items-center"><i class="fas fa-images text-brand-blue mr-2"></i> 현장 사진첩 <span class="text-xs font-normal text-slate-400 ml-2">(클릭하여 확대)</span></h4>
@@ -705,7 +716,6 @@
                         건축물 분석 (아베노하루카스의 구조설계)
                     </h3>
                     <div class="relative w-full aspect-video rounded-2xl overflow-hidden shadow-inner bg-slate-100 mb-4">
-                        <!-- 에러 153 방지: 원본 공유 코드 속성(si 파라미터, web-share 등) 100% 적용 -->
                         <iframe class="absolute top-0 left-0 w-full h-full" 
                                 src="https://www.youtube.com/embed/zmhJBOolRm0?si=5fgUbDFVHhYb6lTm" 
                                 title="아베노 하루카스 구조설계 분석" 
@@ -715,7 +725,6 @@
                                 allowfullscreen>
                         </iframe>
                     </div>
-                    <!-- 우회(Fallback) UI -->
                     <div class="text-right">
                         <a href="https://www.youtube.com/watch?v=zmhJBOolRm0" target="_blank" class="inline-flex items-center text-sm font-semibold text-slate-500 hover:text-brand-blue transition-colors">
                             <i class="fas fa-external-link-alt mr-1.5"></i> 영상 재생 불가 시 유튜브에서 보기
@@ -730,7 +739,6 @@
                         건축물 분석 (챔플레인타워사우스의 붕괴)
                     </h3>
                     <div class="relative w-full aspect-video rounded-2xl overflow-hidden shadow-inner bg-slate-100 mb-4">
-                        <!-- 에러 153 방지: 원본 공유 코드 속성(si 파라미터, web-share 등) 100% 적용 -->
                         <iframe class="absolute top-0 left-0 w-full h-full" 
                                 src="https://www.youtube.com/embed/iL5MmXHB5NA?si=NxaJAslLlDV4_o-N" 
                                 title="챔플레인타워사우스의 붕괴 분석" 
@@ -740,7 +748,6 @@
                                 allowfullscreen>
                         </iframe>
                     </div>
-                    <!-- 우회(Fallback) UI -->
                     <div class="text-right">
                         <a href="https://www.youtube.com/watch?v=iL5MmXHB5NA" target="_blank" class="inline-flex items-center text-sm font-semibold text-slate-500 hover:text-brand-blue transition-colors">
                             <i class="fas fa-external-link-alt mr-1.5"></i> 영상 재생 불가 시 유튜브에서 보기
@@ -773,7 +780,7 @@
                 </div>
             </div>
             <div class="mt-16 pt-8 border-t border-slate-800 text-center text-slate-500 text-sm">
-                <p>&copy; 2024 LEE YONG SANG. All rights reserved.</p>
+                <p>&copy; 2026 LEE YONG SANG. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -818,9 +825,11 @@
         // 1. 최적화된 사진 앨범 데이터 및 렌더링
         // ----------------------------------------
         const galleries = {
-            boramae: ['Ud8yPCW', 'qQYscuQ', 'N2bRORE', 'ybR49uD', 'UTyr5sB', 'THhiDdf', 'vdU16sY', 'Yy8JF78', 'Gg8JodQ', 'Xa4YJxI', 'JDqiWCP', 'dcgOVEn', 'C2C2feC', 'sUhF5b2', 'hl8mDP8', 'IEVKTI5', 'uu2oOut', '3WUmKr2', '83vMgat', 'b5CgijM', '6nhBgUe', 'e9l4lLj', 'GGtX65r', 'HSlrYxv', '5qgkYxF'],
+            boramae: ['D9rGR4n', 'dhsbpsf', 'TqP7aLv', 'uYjKVrO', 'ilkANZr', 'YMCTRlK', 'cZSySXc', '4ZlllB1', 'B4AIumW', 'EAbryfJ', 'GxcQ9zM', 'sKHMTsR', 'AVfvENb', 'EEdg5qL', '1LvMn3y', '6JfgXWv', 'pDjana6', 'aIKExGu', 'pDdYt08', '65sLgI7', 'r0d8dmX', 'Vzo5ITJ', 'ZZK4qDC', '7lELzKg', 'YvMx3LG', 'wVpnHFZ', '05SWp05', 'sbMCVdM'],
             ctower: ['W51zOdv', 'Lt4wSzA', 'LBE2gGu', '8fVtl9n', 's9OLIAl', 'KuBGam7', 'PdmfiSW', 'qRTBqiV', 'L1Wraw1', 'HeTUWFS', '6MIpnTb', '5VGL5xh', 'WhOZeFt', 'GJijsD8', 'JM34gQf', '0a6LtV9', '4Ls9ztR', 'fpnr7tO', 'JCcSiKk', 'cJCecLZ', 'tQSvvtC', '8c0FhRu', 'dnrTGIQ'],
-            samseong: ['GWsvZdn', 'Zy68F2u', 'BE9zAmQ', 'SY4TaOi', 'YFZtUJr', 'H591MRe', 'Esu2D7A', 'cseYSlt', 'jpbX0Fi', '48Gqpv0', 'YNlzN8s', 'BzIURmd', 'V3EGcHC', 'MojRO8I', 'ZoUSIMj', 'IFyBRD5', '3p4CP53', 'HZxajWr', 'OhXG3cK', 'ghPdUiY', 'mEIRC5Y', '3T45wFS']
+            byeongjeom: ['EAgOPiI', 'g0iJwav', 'ZL8ndIf', 'GGT2VdP', 'zEsoGdo', '0Ff4dKm', 'xmggPrT', 'sh3rn6Y', 'dw7P4xp', 'kePkMvY', 'n2qeQ8Y', 'qLdvJDK', 'PPIX4Pk', 'ZRNQTyu', 'yYh8sJM', 'Tp0fjdx', 'kHyZWaF'],
+            samseong: ['GWsvZdn', 'Zy68F2u', 'BE9zAmQ', 'SY4TaOi', 'YFZtUJr', 'H591MRe', 'Esu2D7A', 'cseYSlt', 'jpbX0Fi', '48Gqpv0', 'YNlzN8s', 'BzIURmd', 'V3EGcHC', 'MojRO8I', 'ZoUSIMj', 'IFyBRD5', '3p4CP53', 'HZxajWr', 'OhXG3cK', 'ghPdUiY', 'mEIRC5Y', '3T45wFS'],
+            research: ['Tbwli2d', 'g7tUDBF', 'dYFmL70']
         };
 
         // DOM이 로드되면 갤러리 HTML을 자동으로 생성 (썸네일 사용으로 렉 완벽 해결)
