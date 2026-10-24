@@ -4,6 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>이용상 | Con-Tech Engineer Portfolio</title>
+    <meta name="description" content="건축시공 엔지니어 이용상 포트폴리오 — 도심지 신축 현장 5곳 시공 경력, 학력·자격, 자가치유 콘크리트 연구, 현장 관리 플랫폼 개발">
+
+    <!-- 링크 공유 미리보기 (카카오톡·메신저) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="이용상 | 건축시공 엔지니어 포트폴리오">
+    <meta property="og:description" content="도심지 신축 현장 5곳 시공 경력 · 건축산업기사 · 건설안전기사 · 한양대 공학대학원 건축공학과">
+    <meta property="og:image" content="https://i.imgur.com/c5R3V0l.jpeg">
+    <meta property="og:url" content="https://portfolio-sable-psi-t37gokts42.vercel.app/">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -14,39 +22,11 @@
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Pretendard', 'sans-serif'],
-                    },
-                    colors: {
-                        brand: {
-                            blue: '#2563EB',
-                            navy: '#0f172a',
-                            slate: '#1e293b',
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        body { font-family: 'Pretendard', sans-serif; }
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #f1f5f9; }
-        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: scale(0.95); }
-            to { opacity: 1; transform: scale(1); }
-        }
-        .modal-animate {
-            animation: fadeIn 0.2s ease-out forwards;
-        }
-    </style>
+    <!-- Tailwind 설정 (폰트·브랜드 컬러) -->
+    <script src="js/tailwind-config.js"></script>
+
+    <!-- 공통 스타일 -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased selection:bg-brand-blue selection:text-white relative">
 
@@ -68,10 +48,22 @@
                     <a href="#analysis" class="text-slate-600 hover:text-brand-blue font-semibold transition-colors">건축물 분석</a>
                 </div>
                 <div class="md:hidden flex items-center">
-                    <button class="text-slate-600 hover:text-brand-navy focus:outline-none">
-                        <i class="fas fa-bars text-2xl"></i>
+                    <button id="menuBtn" onclick="toggleMenu()" aria-label="메뉴 열기" aria-expanded="false" aria-controls="mobileMenu" class="w-10 h-10 flex items-center justify-center text-slate-600 hover:text-brand-navy focus:outline-none">
+                        <i id="menuIcon" class="fas fa-bars text-2xl"></i>
                     </button>
                 </div>
+            </div>
+        </div>
+
+        <!-- 모바일 메뉴 (768px 미만) -->
+        <div id="mobileMenu" class="hidden md:hidden border-t border-slate-200 bg-white/95 backdrop-blur-md shadow-lg">
+            <div class="max-w-6xl mx-auto px-4 py-2 flex flex-col">
+                <a href="#about" class="py-3 px-2 text-slate-700 hover:text-brand-blue font-semibold border-b border-slate-100 transition-colors">소개</a>
+                <a href="#education" class="py-3 px-2 text-slate-700 hover:text-brand-blue font-semibold border-b border-slate-100 transition-colors">학력 & 자격</a>
+                <a href="#competence" class="py-3 px-2 text-slate-700 hover:text-brand-blue font-semibold border-b border-slate-100 transition-colors">핵심 역량</a>
+                <a href="#career" class="py-3 px-2 text-slate-700 hover:text-brand-blue font-semibold border-b border-slate-100 transition-colors">경력 사항</a>
+                <a href="#projects" class="py-3 px-2 text-slate-700 hover:text-brand-blue font-semibold border-b border-slate-100 transition-colors">프로젝트</a>
+                <a href="#analysis" class="py-3 px-2 text-slate-700 hover:text-brand-blue font-semibold transition-colors">건축물 분석</a>
             </div>
         </div>
     </nav>
@@ -107,9 +99,13 @@
                             <span class="text-slate-400 flex items-center"><i class="fas fa-hard-hat w-5 text-center mr-2 text-brand-blue"></i> 직무</span> 
                             <span class="font-medium text-white">건축 시공</span>
                         </li>
+                        <li class="flex items-center justify-between border-b border-slate-700/50 pb-3">
+                            <span class="text-slate-400 flex items-center"><i class="fas fa-building w-5 text-center mr-2 text-brand-blue"></i> 현 소속</span> 
+                            <span class="font-medium text-white text-right">아이파크현대산업개발</span>
+                        </li>
                         <li class="flex items-center justify-between">
                             <span class="text-slate-400 flex items-center"><i class="fas fa-briefcase w-5 text-center mr-2 text-brand-blue"></i> 총 경력</span> 
-                            <span class="font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">7년 1개월</span>
+                            <span data-career-total class="font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">7년 3개월</span>
                         </li>
                     </ul>
                 </div>
@@ -169,6 +165,15 @@
                                         <i class="fas fa-search-plus mr-2"></i> 재학증명서 보기
                                     </button>
                                 </div>
+                            </div>
+                        </div>
+
+                        <div class="relative pl-8">
+                            <div class="absolute w-4 h-4 bg-slate-300 rounded-full -left-[9px] top-1 border-2 border-white"></div>
+                            <div class="bg-transparent group">
+                                <span class="text-sm font-bold text-slate-500 tracking-wider">2024.02.23 학위 취득</span>
+                                <h4 class="text-lg font-bold text-slate-700 mt-1">국가평생교육진흥원 (학점은행제)</h4>
+                                <p class="text-slate-600 mt-1">건축공학 학사</p>
                             </div>
                         </div>
 
@@ -324,7 +329,7 @@
                         </p>
                         
                         <div class="mt-8 z-10">
-                            <a href="https://precent.vercel.app/" target="_blank" class="inline-flex items-center justify-center w-full sm:w-auto px-6 py-3.5 bg-brand-blue hover:bg-blue-600 text-white font-bold rounded-xl transition-colors shadow-lg shadow-blue-500/30 group/btn">
+                            <a href="https://precent.vercel.app/" target="_blank" rel="noopener" class="inline-flex items-center justify-center w-full sm:w-auto px-6 py-3.5 bg-brand-blue hover:bg-blue-600 text-white font-bold rounded-xl transition-colors shadow-lg shadow-blue-500/30 group/btn">
                                 <i class="fas fa-external-link-alt mr-2 group-hover/btn:-translate-y-0.5 group-hover/btn:translate-x-0.5 transition-transform"></i> 플랫폼 서비스 바로가기
                             </a>
                         </div>
@@ -343,21 +348,63 @@
                     </h2>
                 </div>
                 <div class="text-slate-600 font-medium text-sm sm:text-base">
-                    총 재직 기간: <span class="text-brand-blue font-bold">7년 1개월</span> (재직 회사 수 2개)
+                    총 재직 기간: <span data-career-total class="text-brand-blue font-bold">7년 3개월</span> (재직 회사 수 3개)
                 </div>
             </div>
 
             <div class="bg-white rounded-2xl shadow-md border border-slate-200 p-8 md:p-12">
                 
-                <!-- 직장 1 -->
+                <!-- 직장 1 : 아이파크현대산업개발 (현 재직) -->
                 <div class="flex flex-col lg:flex-row gap-8 mb-16 relative">
                     <div class="w-full lg:w-1/3 flex flex-col">
                         <div class="flex items-center mb-2">
                             <div class="w-3 h-3 rounded-full bg-brand-blue mr-3 shadow-[0_0_0_3px_rgba(37,99,235,0.2)]"></div>
                             <span class="text-brand-blue font-bold text-sm tracking-wider">직장경력 1</span>
                         </div>
+                        <h3 class="text-2xl font-extrabold text-slate-800 mb-2 ml-6">아이파크현대산업개발(주)</h3>
+                        <p class="text-slate-500 font-medium ml-6 mb-1 text-[13px]">(구 HDC현대산업개발(주))</p>
+                        <p class="text-slate-500 font-medium ml-6 mb-1 mt-1">2026.09.14 ~ 재직중</p>
+                    </div>
+                    
+                    <div class="w-full lg:w-2/3">
+                        <div class="flex flex-wrap gap-3 mb-6">
+                            <div class="flex items-center border border-slate-200 rounded-lg overflow-hidden bg-slate-50">
+                                <span class="px-4 py-2 bg-white font-bold text-slate-700 border-r border-slate-200 text-sm">현장</span>
+                                <span class="px-4 py-2 text-slate-600 text-sm font-medium">서울원 CB</span>
+                            </div>
+                            <div class="flex items-center border border-slate-200 rounded-lg overflow-hidden bg-slate-50">
+                                <span class="px-4 py-2 bg-white font-bold text-slate-700 border-r border-slate-200 text-sm">직급</span>
+                                <span class="px-4 py-2 text-slate-600 text-sm font-medium">매니저(대리)</span>
+                            </div>
+                            <div class="flex items-center border border-slate-200 rounded-lg overflow-hidden bg-slate-50">
+                                <span class="px-4 py-2 bg-white font-bold text-slate-700 border-r border-slate-200 text-sm">담당업무</span>
+                                <span class="px-4 py-2 text-slate-600 text-sm font-medium">건축 시공(공사)</span>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-blue-50/50 p-5 rounded-xl border border-blue-100">
+                            <h4 class="font-bold text-slate-800 mb-3 flex items-center text-sm">
+                                <i class="fas fa-check text-brand-blue mr-2"></i> 수행 현장 (건축 시공직)
+                            </h4>
+                            <ul class="list-none space-y-2 text-slate-600 text-[14.5px] ml-1">
+                                <li class="flex items-start"><span class="mr-2 font-bold">-</span> <span class="break-keep">광운대역 물류부지 개발사업 상업업무용지 B-1블록 신축공사 (서울원 CB)</span></li>
+                                <li class="flex items-start text-[13px] text-slate-500"><span class="mr-2 font-bold">·</span> 착공 2025.09.01 / 참여 2026.09.14 ~</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="w-full h-px bg-slate-100 mb-12"></div>
+
+                <!-- 직장 2 : 에이스디엔시 -->
+                <div class="flex flex-col lg:flex-row gap-8 mb-16 relative">
+                    <div class="w-full lg:w-1/3 flex flex-col">
+                        <div class="flex items-center mb-2">
+                            <div class="w-3 h-3 rounded-full bg-slate-300 mr-3 border-2 border-white"></div>
+                            <span class="text-slate-500 font-bold text-sm tracking-wider">직장경력 2</span>
+                        </div>
                         <h3 class="text-2xl font-extrabold text-slate-800 mb-2 ml-6">에이스디엔시(주)</h3>
-                        <p class="text-slate-500 font-medium ml-6 mb-1">2022.02.21 ~ 재직중</p>
+                        <p class="text-slate-500 font-medium ml-6 mb-1">2022.02.21 ~ 2026.09.04</p>
                         <span class="inline-block ml-6 px-3 py-1 bg-slate-100 text-slate-600 text-xs font-bold rounded-md w-max border border-slate-200 mt-2">정규직</span>
                     </div>
                     
@@ -377,16 +424,16 @@
                             </div>
                         </div>
                         
-                        <div class="bg-blue-50/50 p-5 rounded-xl border border-blue-100">
+                        <div class="bg-slate-50 p-5 rounded-xl border border-slate-100">
                             <h4 class="font-bold text-slate-800 mb-3 flex items-center text-sm">
-                                <i class="fas fa-check text-brand-blue mr-2"></i> 주요 수행 현장 (건축 시공직)
+                                <i class="fas fa-check text-slate-400 mr-2"></i> 주요 수행 현장 (건축 시공직)
                             </h4>
                             <ul class="list-none space-y-2 text-slate-600 text-[14.5px] ml-1">
                                 <li class="flex items-start"><span class="mr-2 font-bold">-</span> 병점복합타운 상업용지 신축공사</li>
                                 <li class="flex items-start"><span class="mr-2 font-bold">-</span> 영등포 C-TOWER 신축공사</li>
                                 <li class="flex items-start"><span class="mr-2 font-bold">-</span> 동작 보라매역 프리센트 신축공사 (TOP-DOWN 공법)</li>
-                                <li class="flex items-start mt-3 pt-3 border-t border-blue-100 font-bold text-brand-blue">
-                                    <span class="mr-2">※</span> 세 번의 무재해 준공 달성
+                                <li class="flex items-start mt-3 pt-3 border-t border-slate-200 font-bold text-brand-blue">
+                                    <span class="mr-2">※</span> 무재해 준공 3회
                                 </li>
                             </ul>
                         </div>
@@ -395,12 +442,12 @@
                 
                 <div class="w-full h-px bg-slate-100 mb-12"></div>
 
-                <!-- 직장 2 -->
+                <!-- 직장 3 : 샘코건설 -->
                 <div class="flex flex-col lg:flex-row gap-8 relative">
                     <div class="w-full lg:w-1/3 flex flex-col">
                         <div class="flex items-center mb-2">
                             <div class="w-3 h-3 rounded-full bg-slate-300 mr-3 border-2 border-white"></div>
-                            <span class="text-slate-500 font-bold text-sm tracking-wider">직장경력 2</span>
+                            <span class="text-slate-500 font-bold text-sm tracking-wider">직장경력 3</span>
                         </div>
                         <h3 class="text-2xl font-extrabold text-slate-800 mb-2 ml-6">샘코건설(주)</h3>
                         <p class="text-slate-500 font-medium ml-6 mb-1 text-[13px]">(현 샘코씨앤디(주))</p>
@@ -452,9 +499,73 @@
             <div class="relative max-w-5xl mx-auto">
                 <div class="absolute left-6 md:left-1/2 top-0 bottom-0 w-1 bg-slate-200 -translate-x-1/2 rounded-full"></div>
 
-                <!-- 1. 보라매역 프리센트 -->
+                <!-- 0. 서울원 CB (현재 참여) -->
                 <div class="relative flex flex-col md:flex-row items-center justify-between mb-32 group">
                     <div class="absolute left-6 md:left-1/2 w-6 h-6 bg-brand-blue rounded-full -translate-x-1/2 shadow-[0_0_0_6px_rgba(255,255,255,1),0_0_0_10px_rgba(37,99,235,0.2)] z-10"></div>
+                    <div class="hidden md:block w-5/12"></div>
+                    
+                    <div class="w-full md:w-5/12 pl-16 md:pl-16">
+                        <div class="bg-white rounded-2xl shadow-lg border border-slate-100 overflow-hidden hover:shadow-2xl transition-all duration-300 transform md:group-hover:translate-x-2 flex flex-col">
+                            <div class="relative w-full h-64 md:h-72 overflow-hidden group/slider bg-slate-100" id="slider-seoulone">
+                                <span class="absolute top-3 left-3 z-10 px-2.5 py-1 bg-black/50 text-white text-xs font-bold rounded-md">조감도·투시도</span>
+                                <div class="flex transition-transform duration-500 ease-in-out h-full w-full" id="track-seoulone">
+                                    <img src="https://i.imgur.com/37DsoLa.jpeg" alt="서울원 CB 조감도·투시도 1" class="w-full h-full object-contain flex-shrink-0">
+                                    <img src="https://i.imgur.com/cDZVocR.png" alt="서울원 CB 조감도·투시도 2" class="w-full h-full object-contain flex-shrink-0">
+                                    <img src="https://i.imgur.com/q1Oytqf.png" alt="서울원 CB 조감도·투시도 3" class="w-full h-full object-contain flex-shrink-0">
+                                    <img src="https://i.imgur.com/lhUO03i.png" alt="서울원 CB 조감도·투시도 4" class="w-full h-full object-contain flex-shrink-0">
+                                </div>
+                                <button onclick="moveSlide('seoulone', -1)" class="absolute left-3 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center bg-black/40 text-white rounded-full opacity-70 md:opacity-0 md:group-hover/slider:opacity-100 hover:bg-brand-blue transition-all z-10"><i class="fas fa-chevron-left text-sm"></i></button>
+                                <button onclick="moveSlide('seoulone', 1)" class="absolute right-3 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center bg-black/40 text-white rounded-full opacity-70 md:opacity-0 md:group-hover/slider:opacity-100 hover:bg-brand-blue transition-all z-10"><i class="fas fa-chevron-right text-sm"></i></button>
+                                <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2 z-10" data-dots="seoulone"></div>
+                            </div>
+                            <div class="p-7 text-left flex-1 bg-white">
+                                <span class="inline-block px-4 py-1 bg-blue-50 text-brand-blue text-sm font-bold rounded-full mb-3">2026.09 ~ 진행 중</span>
+                                <h3 class="text-2xl font-extrabold text-brand-navy mb-1 break-keep">서울원 CB 신축공사</h3>
+                                <p class="text-[13px] font-medium text-slate-500 mb-3 break-keep">광운대역 물류부지 개발사업 상업업무용지 B-1블록 신축공사</p>
+                                
+                                <div class="text-sm text-slate-600 mb-4 space-y-1 bg-slate-50 p-3 rounded-lg border border-slate-100">
+                                    <p><span class="font-bold w-[70px] inline-block text-slate-700">사업방식</span> : 자체사업</p>
+                                    <p><span class="font-bold w-[70px] inline-block text-slate-700">근무처</span> : 아이파크현대산업개발(주)</p>
+                                    <p><span class="font-bold w-[70px] inline-block text-slate-700">참여역할</span> : 공사(건축 시공)</p>
+                                </div>
+
+                                <div class="mb-4">
+                                    <h4 class="font-bold text-slate-800 mb-1.5"><i class="fas fa-info-circle text-brand-blue mr-1"></i> 프로젝트 개요</h4>
+                                    <ul class="list-disc list-inside text-slate-600 text-sm space-y-1.5 ml-1 break-keep">
+                                        <li><span class="font-semibold">규모:</span> 연면적 190,196.86㎡, 지하 5층~지상 15층, 2개동 (호텔, 업무시설, 판매시설)</li>
+                                        <li><span class="font-semibold">공법:</span> SRC조, C.I.P+H-Pile 흙막이, 역타공법(Slab 지지), E.S.G 차수</li>
+                                        <li><span class="font-semibold">공기:</span> 2025.09 ~ 2028.07 (35개월), 2026.09.14 참여</li>
+                                        <li><span class="font-semibold">직책:</span> 건축시공 매니저(대리)</li>
+                                    </ul>
+                                </div>
+
+                                <button onclick="toggleDetails('details-seoulone')" class="mt-2 flex items-center justify-center w-full py-2 bg-slate-50 hover:bg-blue-50 border border-slate-200 hover:border-blue-200 text-slate-700 hover:text-brand-blue rounded-lg font-bold text-sm transition-colors">
+                                    공사 개요 상세 보기 <i id="icon-details-seoulone" class="fas fa-chevron-down ml-2 transition-transform duration-300"></i>
+                                </button>
+                                
+                                <div id="details-seoulone" class="hidden mt-4 pt-4 border-t border-slate-100 animate-[fadeIn_0.3s_ease-out]">
+                                    <h4 class="font-bold text-slate-800 mb-2"><i class="fas fa-layer-group text-brand-blue mr-1"></i> 규모 및 동별 구성</h4>
+                                    <ul class="list-disc list-outside ml-5 text-slate-600 text-[13.5px] leading-relaxed space-y-2 break-keep">
+                                        <li><span class="font-bold text-slate-700">대지:</span> 대지면적 19,675.40㎡ / 용적률 599.99%</li>
+                                        <li><span class="font-bold text-slate-700">The CUBE (B5~15F):</span> 호텔(메리어트) 12~15F / 업무시설 6~11F (아이파크현대산업개발 본사 이전 예정) / 판매시설 B1~5F / 주차장 B5~B1F</li>
+                                        <li><span class="font-bold text-slate-700">CUBE nest (B5~7F):</span> 영화관 5~7F / 운동시설 3~4F / 판매시설 B2~2F / 주차장 B5~B2F</li>
+                                    </ul>
+                                    <h4 class="font-bold text-slate-800 mt-5 mb-2"><i class="fas fa-hard-hat text-brand-blue mr-1"></i> 주요 공법</h4>
+                                    <ul class="list-disc list-outside ml-5 text-slate-600 text-[13.5px] leading-relaxed space-y-2 break-keep">
+                                        <li><span class="font-bold text-slate-700">흙막이:</span> C.I.P(Ø600, CTC 600)+H-Pile / H-Pile+토류판</li>
+                                        <li><span class="font-bold text-slate-700">지지·차수:</span> E/A, 역타공법(Slab 지지) / E.S.G 그라우팅(Ø800, CTC 600)</li>
+                                        <li><span class="font-bold text-slate-700">기초:</span> 지내력 기초 700~1,000kN/㎡</li>
+                                        <li><span class="font-bold text-slate-700">골조:</span> SRC조 (철골·철골철근콘크리트, 라멘구조)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 1. 보라매역 프리센트 -->
+                <div class="relative flex flex-col md:flex-row items-center justify-between mb-32 group">
+                    <div class="absolute left-6 md:left-1/2 w-5 h-5 bg-slate-300 rounded-full -translate-x-1/2 shadow-[0_0_0_6px_rgba(255,255,255,1)] z-10 group-hover:bg-brand-blue group-hover:w-6 group-hover:h-6 transition-all duration-300"></div>
                     
                     <div class="w-full md:w-5/12 pl-16 md:pl-0 md:pr-16 md:text-right">
                         <div class="bg-white rounded-2xl shadow-lg border border-slate-100 overflow-hidden hover:shadow-2xl transition-all duration-300 transform md:group-hover:-translate-x-2 flex flex-col">
@@ -466,14 +577,10 @@
                                 </div>
                                 <button onclick="moveSlide('boramae', -1)" class="absolute left-3 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center bg-black/40 text-white rounded-full opacity-70 md:opacity-0 md:group-hover/slider:opacity-100 hover:bg-brand-blue transition-all z-10"><i class="fas fa-chevron-left text-sm"></i></button>
                                 <button onclick="moveSlide('boramae', 1)" class="absolute right-3 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center bg-black/40 text-white rounded-full opacity-70 md:opacity-0 md:group-hover/slider:opacity-100 hover:bg-brand-blue transition-all z-10"><i class="fas fa-chevron-right text-sm"></i></button>
-                                <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2 z-10">
-                                    <div class="w-2 h-2 rounded-full bg-slate-800 transition-colors shadow-sm" id="dot-boramae-0"></div>
-                                    <div class="w-2 h-2 rounded-full bg-slate-400 transition-colors shadow-sm" id="dot-boramae-1"></div>
-                                    <div class="w-2 h-2 rounded-full bg-slate-400 transition-colors shadow-sm" id="dot-boramae-2"></div>
-                                </div>
+                                <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2 z-10" data-dots="boramae"></div>
                             </div>
                             <div class="p-7 text-left flex-1 bg-white">
-                                <span class="inline-block px-4 py-1 bg-blue-50 text-brand-blue text-sm font-bold rounded-full mb-3">2024.07 ~ 2026.07</span>
+                                <span class="inline-block px-4 py-1 bg-slate-100 text-slate-600 text-sm font-bold rounded-full mb-3">2024.07 ~ 2026.09</span>
                                 <h3 class="text-2xl font-extrabold text-brand-navy mb-3">동작 보라매역 프리센트 신축공사</h3>
                                 
                                 <div class="text-sm text-slate-600 mb-4 space-y-1 bg-slate-50 p-3 rounded-lg border border-slate-100">
@@ -485,8 +592,9 @@
                                 <div class="mb-4">
                                     <h4 class="font-bold text-slate-800 mb-1.5"><i class="fas fa-info-circle text-brand-blue mr-1"></i> 프로젝트 개요</h4>
                                     <ul class="list-disc list-inside text-slate-600 text-sm space-y-1.5 ml-1 break-keep">
-                                        <li><span class="font-semibold">규모:</span> 연면적 23,765㎡, 지하 4층~지상 20층 (공동주택 124세대, 오피스텔 64세대, 근린생활생시설)</li>
+                                        <li><span class="font-semibold">규모:</span> 연면적 23,765㎡, 지하 4층~지상 20층 (공동주택 124세대, 오피스텔 64세대, 근린생활시설)</li>
                                         <li><span class="font-semibold">공법:</span> RC조, C.I.P, TOP-DOWN, PRD, 커튼월 공법</li>
+                                        <li><span class="font-semibold">준공:</span> 2026.06.30</li>
                                         <li><span class="font-semibold">직책:</span> 건축시공 선임(대리)</li>
                                     </ul>
                                 </div>
@@ -501,7 +609,8 @@
                                         <li><span class="font-bold text-slate-700">고난도 도심지 공사 수행:</span> 협소한 부지 특성을 반영한 양중 및 물류 반입 계획 수립</li>
                                         <li><span class="font-bold text-slate-700">특수공법 시공 관리:</span> PRD 및 TOP-DOWN 공법 적용 구간의 굴착 및 골조 동시 진행에 따른 구조적 안정성 확보 및 리스크 통제</li>
                                         <li><span class="font-bold text-slate-700">인터페이스 조율:</span> 건축/설비/전기 상세도 사전 교차 검토로 타 공종 간 간섭 및 재시공 문제 선제 차단</li>
-                                        <li><span class="font-bold text-slate-700">공정/품질 관리:</span> 커튼월 외장 공사 및 내부 세대 마감 공정 지휘, 철저한 품질 기준 적용으로 성공적인 공기 준수</li>
+                                        <li><span class="font-bold text-slate-700">공정/품질 관리:</span> 커튼월 외장 공사 및 세대 내부 마감 공정 관리, 2026.06.30 준공</li>
+                                        <li><span class="font-bold text-slate-700">준공 후 하자 관리:</span> 세대 하자접수대장(엑셀) 구축, 17개 시공 공종을 8개 협력업체에 자동 배정(VLOOKUP)함</li>
                                     </ul>
                                     <div class="mt-8 pt-6 border-t border-slate-100">
                                         <h4 class="font-bold text-slate-800 mb-4 flex items-center"><i class="fas fa-images text-brand-blue mr-2"></i> 현장 사진첩 <span class="text-xs font-normal text-slate-400 ml-2">(클릭하여 확대)</span></h4>
@@ -530,11 +639,7 @@
                                 </div>
                                 <button onclick="moveSlide('ctower', -1)" class="absolute left-3 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center bg-black/40 text-white rounded-full opacity-70 md:opacity-0 md:group-hover/slider:opacity-100 hover:bg-brand-blue transition-all z-10"><i class="fas fa-chevron-left text-sm"></i></button>
                                 <button onclick="moveSlide('ctower', 1)" class="absolute right-3 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center bg-black/40 text-white rounded-full opacity-70 md:opacity-0 md:group-hover/slider:opacity-100 hover:bg-brand-blue transition-all z-10"><i class="fas fa-chevron-right text-sm"></i></button>
-                                <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2 z-10">
-                                    <div class="w-2 h-2 rounded-full bg-slate-800 transition-colors shadow-sm" id="dot-ctower-0"></div>
-                                    <div class="w-2 h-2 rounded-full bg-slate-400 transition-colors shadow-sm" id="dot-ctower-1"></div>
-                                    <div class="w-2 h-2 rounded-full bg-slate-400 transition-colors shadow-sm" id="dot-ctower-2"></div>
-                                </div>
+                                <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2 z-10" data-dots="ctower"></div>
                             </div>
                             <div class="p-7 text-left flex-1 bg-white">
                                 <span class="inline-block px-4 py-1 bg-slate-100 text-slate-600 text-sm font-bold rounded-full mb-3">2023.10 ~ 2024.06</span>
@@ -590,10 +695,7 @@
                                 </div>
                                 <button onclick="moveSlide('byeongjeom', -1)" class="absolute left-3 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center bg-black/40 text-white rounded-full opacity-70 md:opacity-0 md:group-hover/slider:opacity-100 hover:bg-brand-blue transition-all z-10"><i class="fas fa-chevron-left text-sm"></i></button>
                                 <button onclick="moveSlide('byeongjeom', 1)" class="absolute right-3 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center bg-black/40 text-white rounded-full opacity-70 md:opacity-0 md:group-hover/slider:opacity-100 hover:bg-brand-blue transition-all z-10"><i class="fas fa-chevron-right text-sm"></i></button>
-                                <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2 z-10">
-                                    <div class="w-2 h-2 rounded-full bg-slate-800 transition-colors shadow-sm" id="dot-byeongjeom-0"></div>
-                                    <div class="w-2 h-2 rounded-full bg-slate-400 transition-colors shadow-sm" id="dot-byeongjeom-1"></div>
-                                </div>
+                                <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2 z-10" data-dots="byeongjeom"></div>
                             </div>
                             <div class="p-7 text-left flex-1 bg-white">
                                 <span class="inline-block px-4 py-1 bg-slate-100 text-slate-600 text-sm font-bold rounded-full mb-3">2022.02 ~ 2024.06</span>
@@ -649,10 +751,7 @@
                                 </div>
                                 <button onclick="moveSlide('samseong', -1)" class="absolute left-3 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center bg-black/40 text-white rounded-full opacity-70 md:opacity-0 md:group-hover/slider:opacity-100 hover:bg-brand-blue transition-all z-10"><i class="fas fa-chevron-left text-sm"></i></button>
                                 <button onclick="moveSlide('samseong', 1)" class="absolute right-3 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center bg-black/40 text-white rounded-full opacity-70 md:opacity-0 md:group-hover/slider:opacity-100 hover:bg-brand-blue transition-all z-10"><i class="fas fa-chevron-right text-sm"></i></button>
-                                <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2 z-10">
-                                    <div class="w-2 h-2 rounded-full bg-slate-800 transition-colors shadow-sm" id="dot-samseong-0"></div>
-                                    <div class="w-2 h-2 rounded-full bg-slate-400 transition-colors shadow-sm" id="dot-samseong-1"></div>
-                                </div>
+                                <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2 z-10" data-dots="samseong"></div>
                             </div>
                             <div class="p-7 text-left flex-1 bg-white">
                                 <span class="inline-block px-4 py-1 bg-slate-100 text-slate-600 text-sm font-bold rounded-full mb-3">2020.06 ~ 2022.02</span>
@@ -727,7 +826,7 @@
                         </iframe>
                     </div>
                     <div class="text-right">
-                        <a href="https://www.youtube.com/watch?v=zmhJBOolRm0" target="_blank" class="inline-flex items-center text-sm font-semibold text-slate-500 hover:text-brand-blue transition-colors">
+                        <a href="https://www.youtube.com/watch?v=zmhJBOolRm0" target="_blank" rel="noopener" class="inline-flex items-center text-sm font-semibold text-slate-500 hover:text-brand-blue transition-colors">
                             <i class="fas fa-external-link-alt mr-1.5"></i> 영상 재생 불가 시 유튜브에서 보기
                         </a>
                     </div>
@@ -750,7 +849,7 @@
                         </iframe>
                     </div>
                     <div class="text-right">
-                        <a href="https://www.youtube.com/watch?v=iL5MmXHB5NA" target="_blank" class="inline-flex items-center text-sm font-semibold text-slate-500 hover:text-brand-blue transition-colors">
+                        <a href="https://www.youtube.com/watch?v=iL5MmXHB5NA" target="_blank" rel="noopener" class="inline-flex items-center text-sm font-semibold text-slate-500 hover:text-brand-blue transition-colors">
                             <i class="fas fa-external-link-alt mr-1.5"></i> 영상 재생 불가 시 유튜브에서 보기
                         </a>
                     </div>
@@ -775,7 +874,7 @@
                     <button onclick="showContact('phone')" class="w-14 h-14 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-300 hover:bg-brand-blue hover:text-white hover:border-brand-blue transition-all duration-300 shadow-lg group focus:outline-none" title="연락처 확인">
                         <i class="fas fa-phone text-xl group-hover:scale-110 transition-transform"></i>
                     </button>
-                    <a href="https://github.com/yourusername" target="_blank" class="w-14 h-14 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-300 hover:bg-white hover:text-black hover:border-white transition-all duration-300 shadow-lg group" title="GitHub">
+                    <a id="githubLink" href="#" target="_blank" rel="noopener" class="w-14 h-14 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-300 hover:bg-white hover:text-black hover:border-white transition-all duration-300 shadow-lg group" title="GitHub">
                         <i class="fab fa-github text-2xl group-hover:scale-110 transition-transform"></i>
                     </a>
                 </div>
@@ -813,7 +912,7 @@
             </div>
             <h3 class="text-2xl font-extrabold text-brand-navy mb-2 tracking-tight" id="contactTitle">연락처</h3>
             <div class="bg-slate-50 border border-slate-100 rounded-lg p-4 mb-6 mt-4">
-                <p class="text-xl text-brand-blue font-bold tracking-wide select-all cursor-text" id="contactText">010-0000-0000</p>
+                <p class="text-xl text-brand-blue font-bold tracking-wide select-all cursor-text" id="contactText"></p>
             </div>
             <button onclick="closeContactModal(event)" class="w-full py-3.5 bg-brand-navy text-white rounded-xl font-bold hover:bg-brand-blue hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
                 확인
@@ -821,205 +920,8 @@
         </div>
     </div>
 
-    <script>
-        // ----------------------------------------
-        // 1. 최적화된 사진 앨범 데이터 및 렌더링
-        // ----------------------------------------
-        const galleries = {
-            boramae: ['D9rGR4n', 'dhsbpsf', 'TqP7aLv', 'uYjKVrO', 'ilkANZr', 'YMCTRlK', 'cZSySXc', '4ZlllB1', 'B4AIumW', 'EAbryfJ', 'GxcQ9zM', 'sKHMTsR', 'AVfvENb', 'EEdg5qL', '1LvMn3y', '6JfgXWv', 'pDjana6', 'aIKExGu', 'pDdYt08', '65sLgI7', 'r0d8dmX', 'Vzo5ITJ', 'ZZK4qDC', '7lELzKg', 'YvMx3LG', 'wVpnHFZ', '05SWp05', 'sbMCVdM'],
-            ctower: ['W51zOdv', 'Lt4wSzA', 'LBE2gGu', '8fVtl9n', 's9OLIAl', 'KuBGam7', 'PdmfiSW', 'qRTBqiV', 'L1Wraw1', 'HeTUWFS', '6MIpnTb', '5VGL5xh', 'WhOZeFt', 'GJijsD8', 'JM34gQf', '0a6LtV9', '4Ls9ztR', 'fpnr7tO', 'JCcSiKk', 'cJCecLZ', 'tQSvvtC', '8c0FhRu', 'dnrTGIQ'],
-            byeongjeom: ['EAgOPiI', 'g0iJwav', 'ZL8ndIf', 'GGT2VdP', 'zEsoGdo', '0Ff4dKm', 'xmggPrT', 'sh3rn6Y', 'dw7P4xp', 'kePkMvY', 'n2qeQ8Y', 'qLdvJDK', 'PPIX4Pk', 'ZRNQTyu', 'yYh8sJM', 'Tp0fjdx', 'kHyZWaF'],
-            samseong: ['GWsvZdn', 'Zy68F2u', 'BE9zAmQ', 'SY4TaOi', 'YFZtUJr', 'H591MRe', 'Esu2D7A', 'cseYSlt', 'jpbX0Fi', '48Gqpv0', 'YNlzN8s', 'BzIURmd', 'V3EGcHC', 'MojRO8I', 'ZoUSIMj', 'IFyBRD5', '3p4CP53', 'HZxajWr', 'OhXG3cK', 'ghPdUiY', 'mEIRC5Y', '3T45wFS'],
-            research: ['Tbwli2d', 'g7tUDBF', 'dYFmL70']
-        };
-
-        // DOM이 로드되면 갤러리 HTML을 자동으로 생성 (썸네일 사용으로 렉 완벽 해결)
-        window.addEventListener('DOMContentLoaded', () => {
-            Object.keys(galleries).forEach(siteId => {
-                const container = document.getElementById(`gallery-${siteId}`);
-                if (!container) return;
-                
-                let html = '';
-                galleries[siteId].forEach((imgId, index) => {
-                    // "l.jpeg" -> Imgur의 최적화된 썸네일(Large) 주소 적용 (속도 혁신)
-                    const thumbnailUrl = `https://i.imgur.com/${imgId}l.jpeg`;
-                    
-                    html += `
-                        <div class="relative aspect-square overflow-hidden rounded-xl bg-slate-100 border border-slate-200 group cursor-pointer" onclick="openGallery('${siteId}', ${index})">
-                            <img src="${thumbnailUrl}" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" alt="현장 사진">
-                            <div class="absolute inset-0 bg-brand-blue/0 group-hover:bg-brand-blue/20 transition-colors duration-300 flex items-center justify-center">
-                                <i class="fas fa-search-plus text-white opacity-0 group-hover:opacity-100 text-2xl"></i>
-                            </div>
-                        </div>
-                    `;
-                });
-                container.innerHTML = html;
-            });
-        });
-
-        // ----------------------------------------
-        // 2. 모달(팝업) 및 갤러리 슬라이드 제어
-        // ----------------------------------------
-        let currentGallery = null;
-        let currentIndex = 0;
-
-        function openModal(imageSrc) {
-            currentGallery = null; // 단일 이미지용
-            document.getElementById('modalImage').src = imageSrc;
-            
-            document.getElementById('prevBtn').classList.add('hidden');
-            document.getElementById('nextBtn').classList.add('hidden');
-            document.getElementById('galleryCounter').classList.add('hidden');
-
-            const modal = document.getElementById('imageModal');
-            modal.classList.remove('hidden');
-            modal.classList.add('flex');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function openGallery(siteId, index) {
-            currentGallery = galleries[siteId];
-            currentIndex = index;
-            // 팝업에서는 원본(.jpeg) 고화질 이미지 로드
-            document.getElementById('modalImage').src = `https://i.imgur.com/${currentGallery[currentIndex]}.jpeg`;
-            
-            document.getElementById('prevBtn').classList.remove('hidden');
-            document.getElementById('nextBtn').classList.remove('hidden');
-            document.getElementById('galleryCounter').classList.remove('hidden');
-            updateCounter();
-
-            const modal = document.getElementById('imageModal');
-            modal.classList.remove('hidden');
-            modal.classList.add('flex');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function navigateGallery(dir, event) {
-            if (event) event.stopPropagation();
-            if (!currentGallery) return;
-            
-            currentIndex = (currentIndex + dir + currentGallery.length) % currentGallery.length;
-            document.getElementById('modalImage').src = `https://i.imgur.com/${currentGallery[currentIndex]}.jpeg`;
-            updateCounter();
-        }
-
-        function updateCounter() {
-            document.getElementById('galleryCounter').innerText = `${currentIndex + 1} / ${currentGallery.length}`;
-        }
-
-        function closeModal(event) {
-            const modal = document.getElementById('imageModal');
-            const closeBtn = document.getElementById('closeBtn');
-            
-            if (!event || event.target === modal || (event.currentTarget && event.currentTarget === closeBtn)) {
-                modal.classList.add('hidden');
-                modal.classList.remove('flex');
-                document.body.style.overflow = '';
-                
-                setTimeout(() => {
-                    if(modal.classList.contains('hidden')) {
-                        document.getElementById('modalImage').src = '';
-                    }
-                }, 200);
-            }
-        }
-
-        // 키보드 컨트롤 (Esc 닫기, 좌우 방향키로 사진첩 넘기기)
-        document.addEventListener('keydown', function(event) {
-            const imageModal = document.getElementById('imageModal');
-            if (!imageModal.classList.contains('hidden')) {
-                if (event.key === 'Escape') closeModal();
-                if (event.key === 'ArrowLeft') navigateGallery(-1);
-                if (event.key === 'ArrowRight') navigateGallery(1);
-            }
-            if (event.key === 'Escape' && !document.getElementById('contactModal').classList.contains('hidden')) {
-                closeContactModal();
-            }
-        });
-
-        // ----------------------------------------
-        // 3. 기타 UI 상호작용 (아코디언, 연락처 등)
-        // ----------------------------------------
-        function toggleDetails(id) {
-            const details = document.getElementById(id);
-            const icon = document.getElementById('icon-' + id);
-            
-            if (details.classList.contains('hidden')) {
-                details.classList.remove('hidden');
-                icon.classList.add('rotate-180');
-            } else {
-                details.classList.add('hidden');
-                icon.classList.remove('rotate-180');
-            }
-        }
-
-        const sliders = {
-            'boramae': { current: 0, total: 3 },
-            'ctower': { current: 0, total: 3 },
-            'byeongjeom': { current: 0, total: 2 },
-            'samseong': { current: 0, total: 2 }
-        };
-
-        function moveSlide(id, dir) {
-            const slider = sliders[id];
-            slider.current = (slider.current + dir + slider.total) % slider.total;
-            
-            const track = document.getElementById(`track-${id}`);
-            track.style.transform = `translateX(-${slider.current * 100}%)`;
-            
-            for(let i=0; i<slider.total; i++) {
-                const dot = document.getElementById(`dot-${id}-${i}`);
-                if(i === slider.current) {
-                    dot.classList.remove('bg-slate-400');
-                    dot.classList.add('bg-slate-800');
-                } else {
-                    dot.classList.remove('bg-slate-800');
-                    dot.classList.add('bg-slate-400');
-                }
-            }
-        }
-
-        function showContact(type) {
-            const modal = document.getElementById('contactModal');
-            const icon = document.getElementById('contactIcon');
-            const title = document.getElementById('contactTitle');
-            const text = document.getElementById('contactText');
-            
-            if (type === 'email') {
-                icon.innerHTML = '<i class="fas fa-envelope text-2xl"></i>';
-                title.innerText = '이메일 주소';
-                text.innerText = 'fnffnvl94@naver.com';
-            } else if (type === 'phone') {
-                icon.innerHTML = '<i class="fas fa-phone text-2xl"></i>';
-                title.innerText = '연락처';
-                text.innerText = '010-8739-4772';
-            }
-            
-            modal.classList.remove('hidden');
-            modal.classList.add('flex');
-            document.body.style.overflow = 'hidden';
-            
-            setTimeout(() => {
-                document.getElementById('contactModalContent').classList.remove('scale-95');
-                document.getElementById('contactModalContent').classList.add('scale-100');
-            }, 10);
-        }
-
-        function closeContactModal(event) {
-            const modal = document.getElementById('contactModal');
-            const content = document.getElementById('contactModalContent');
-            
-            if (!event || event.target === modal || event.currentTarget.tagName === 'BUTTON') {
-                content.classList.remove('scale-100');
-                content.classList.add('scale-95');
-                
-                setTimeout(() => {
-                    modal.classList.add('hidden');
-                    modal.classList.remove('flex');
-                    document.body.style.overflow = '';
-                }, 200);
-            }
-        }
-    </script>
+    <!-- 데이터(경력 기간·연락처·사진 ID) → 화면 동작 순서로 로드 -->
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>

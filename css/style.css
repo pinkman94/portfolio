@@ -1,0 +1,24 @@
+/* =========================================================
+ * 이용상 포트폴리오 - 공통 스타일
+ * (레이아웃·색상은 index.html의 Tailwind 클래스로 관리)
+ * ========================================================= */
+
+body { font-family: 'Pretendard', sans-serif; }
+
+/* 스크롤바 */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #f1f5f9; }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+/* 모달·상세 펼침 애니메이션 */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+.modal-animate {
+    animation: fadeIn 0.2s ease-out forwards;
+}
+
+/* 슬라이더 스와이프 시 세로 스크롤만 브라우저에 맡김 */
+[id^="slider-"] { touch-action: pan-y; }
